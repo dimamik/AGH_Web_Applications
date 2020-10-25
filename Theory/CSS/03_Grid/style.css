@@ -1,0 +1,27 @@
+body,html{
+     margin: 0;
+}
+.grid-container {
+     display: grid;
+     grid-template-columns: auto auto auto;
+     grid-gap: 10px;
+     background-color: #2196F3;
+     padding: 10px;
+}
+.grid-container > div {
+     background-color: rgba(255, 255, 255, 0.8);
+     text-align: center;
+     padding: 20px 0;
+     font-size: 30px;
+}
+.grid-container {
+     display: grid;
+     grid-column-gap: 50px;
+     grid-row-gap: 50px;
+     /* The same as above  */
+     grid-gap: 50px 100px;
+}
+.item1 {
+     grid-row-start: 1;
+     grid-row-end: 3;
+   }
