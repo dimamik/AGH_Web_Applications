@@ -1,0 +1,47 @@
+body,html{
+     margin: 0;
+}
+
+#R1{
+     background-color: red;
+     width: 60%;
+     height: 100px;
+     display: inline-block;
+}
+#R2{
+     background-color: blue;
+     width: 20%;
+     display: inline-block;
+     position: relative;
+
+     
+     
+}
+
+#R3{
+     background-color: green;
+}
+#R4{
+     background-color: yellow;
+}
+#R5{
+     background-color: pink;
+}
+#P1{
+     background-color: darkcyan;
+     display: flex;
+     align-items: center;
+     justify-content:center;
+     width: 400px;
+     height:200px;
+}
+#C1{
+     background-color: burlywood;
+     display: flex;
+     width: 75px;
+     height: 75px;
+     align-items: center;
+     justify-content:center;
+
+}
+

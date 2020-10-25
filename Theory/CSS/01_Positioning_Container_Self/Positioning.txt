@@ -1,0 +1,76 @@
+Display: -  The default display value for most elements is block or inline.
+    :block - Starts on a new line and takes up the full width available
+    :inline - Does not start on a new line and only takes up as much width as necessary
+    :inline-block - The element itself is formatted as an inline element, but you can apply height and width values.
+    :flex - Special formating when you control the boxes
+    :list-item - Let the element behave like a <li> element
+    :none - The element is completely removed
+    :inherit - Inherits this property from its parent element.
+
+Position:
+    :static - elements are not affected by the top, bottom, left, and right properties, positioned by the normal page flow.
+    :relative - relative to its normal position (left/right/top/bottom)
+    :fixed - relative to the viewport (always the same position)
+    :absolute - is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+    :sticky -  is positioned based on the user's scroll position.
+
+Float (Format Content Behaviour Inside the Container Space):
+!! ONLY WORKS WITH DISPLAY:BLOCK!! (And also clear exists)
+    :left - to left
+    :right - to right
+    :none - as inline element
+    :inherit - The element inherits the float value of its parent
+
+
+Overflow (Overlapped content):
+    :visible - not clipped, renders outside the box
+    :hidden -  the overflow is clipped, and the rest of the content is hidden
+    :scroll - Content is clipped and scrollbar is added
+    :auto - similar to scroll but adds scrollbars only when is necessary
+
+Align & Horizontal and Verical Centring
+
+    Horizontal:
+    margin: auto; - To horizontally center a block element
+    text-align: center; - To horizontally center a position: absolute; right: 10%; - To horizontally allighn element
+    position: relative;right: -15%; - To horizontally change the position
+    padding/margin/border change
+
+    Verical:
+    1 sposób:
+    ???
+    <style type="text/css">
+        #myoutercontainer {position:relative}
+        #myinnercontainer {position:absolute; top:50%; height:10em; margin-top:-5em}
+    </style>
+    ...
+    <div id="myoutercontainer">
+        <div id="myinnercontainer">
+            <p>Hey look! I'm vertically centered!</p>
+            <p>How sweet is this?!</p>
+        </div>
+    </div>
+
+    2 sposób:
+    ???
+    #P1{
+        background-color: darkcyan;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        width: 400px;
+        height:200px;
+    }
+    #C1{
+        background-color: burlywood;
+        display: flex;
+        width: 75px;
+        height: 75px;
+        align-items: center;
+        justify-content:center;
+
+    }
+
+
+
+     
