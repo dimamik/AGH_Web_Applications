@@ -1,0 +1,22 @@
+body,html{
+     margin: 0;
+}
+.flex-container{
+     display: flex;
+     background-color: DodgerBlue;
+     justify-content: space-between;
+     align-items:flex-end;     
+}
+.flex-container > div{
+     background-color: #f1f1f1;
+     margin: 10px;
+     padding: 20px;
+     font-size: 30px;
+     align-items: flex-start;
+}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}

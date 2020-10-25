@@ -1,0 +1,47 @@
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+Start Using:
+    1) Define flex-container div and play:
+    https://codepen.io/enxaneta/full/adLPwv/
+        flex-direction: column;
+        flex-direction: column-reverse;
+        flex-direction: row;
+        flex-wrap: wrap/nowrap; - Should items wrap (slice to other line) 
+        Perfect Centering:
+        justify-content: center; - X axes
+        align-items: center; - Y axes
+        
+        align-content: flex-start; - all container
+    
+    2) For the elements:
+        order
+        flex-grow: 3; - 3 times faster grow than others
+        flex-shrink
+        flex-basis
+        flex
+        align-self: center;
+    3) Make Flex Responsive
+        1 sposob:
+
+        /* Responsive layout - makes a one column layout instead of a two-column layout */
+        @media (max-width: 800px) {
+        .flex-item-right, .flex-item-left {
+            flex: 100%;
+            }
+        }
+
+        2 sposob:
+        
+        /* Responsive layout - makes a one column-layout instead of two-column layout */
+        @media (max-width: 800px) {
+        .flex-container {
+            flex-direction: column;
+        }
+        }
+
+
+
+
+
+
+        
