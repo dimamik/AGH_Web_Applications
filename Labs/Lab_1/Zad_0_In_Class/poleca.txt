@@ -1,0 +1,3 @@
+https://www.w3schools.com/
+https://developer.mozilla.org/pl/docs/Web/CSS
+https://docs.emmet.io/cheat-sheet/ --> Skroty Emmet
