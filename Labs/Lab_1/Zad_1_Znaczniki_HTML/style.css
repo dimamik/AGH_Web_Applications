@@ -1,0 +1,73 @@
+html,
+body {
+    width: 100%;
+}
+
+#p1 {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    width: 80%;
+    height: 150px;
+    overflow: scroll;
+    margin: auto;
+}
+
+#p2 {
+    background-color: green;
+    margin: 0;
+}
+
+#p3 {
+    background-color: yellow;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: whitesmoke;
+    margin-bottom: 5%;
+}
+
+th {
+    background-color: grey;
+}
+
+img {
+    margin: 5px;
+}
+
+#pic1 {
+    width: 100px;
+    float: left;
+}
+
+#pic2 {
+    width: 100px;
+    float: right;
+}
+
+#pic3 {
+    position: relative;
+    left: 80px;
+}
+
+#pic4 {
+    position: relative;
+    left: -95px
+}
+
+.europe_country {
+    background-color: blue;
+    margin: 1px;
+}
+
+.asia {
+    background-color: red;
+    margin: 1px;
+}

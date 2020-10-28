@@ -1,0 +1,61 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'logo header header header' 'main_page1 galerry local kontakt' 'left main_page main_page main_page' 'footer footer footer footer';
+}
+
+* {
+    text-align: center;
+    background-color: bisque;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main_page1 {
+    grid-area: main_page1;
+    height: 5vh;
+    background-color: bisque;
+}
+
+.galerry {
+    grid-area: galerry;
+    background-color: cadetblue;
+}
+
+.local {
+    grid-area: local;
+    background-color: rgb(180, 120, 45);
+}
+
+.kontakt {
+    grid-area: kontakt;
+    background-color: rgb(77, 50, 18);
+}
+
+.left {
+    grid-area: left;
+    height: 25vh;
+    background-color: rgb(224, 200, 171);
+}
+
+.main_page {
+    grid-area: main_page;
+    background-color: rgba(20, 218, 80, 0.747);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: brown;
+    height: 5vh;
+}
