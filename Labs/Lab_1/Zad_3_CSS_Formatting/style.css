@@ -1,0 +1,45 @@
+body {
+    font-family: Tahoma, "Lucida Grande", Arial, sans-serif;
+    font-size: 62.5%;
+    background-color: #f8faf1;
+}
+
+h1 {
+    font-size: 2.4em;
+    padding-left: 5%;
+    background-color: #294e56;
+    color: white;
+}
+
+.left_side_info {
+    float: right;
+    width: 30%;
+    background-color: #fbef99;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: black;
+    text-decoration: underline;
+}
+
+u {}
+
+h3 {
+    font-size: 1.4em;
+    color: #14556B;
+    text-align: center;
+}
+
+p,
+ul,
+ol {
+    font-size: 1.2em;
+    line-height: 130%;
+}
+
+ul {
+    color: #666666;
+    list-style: square;
+}
