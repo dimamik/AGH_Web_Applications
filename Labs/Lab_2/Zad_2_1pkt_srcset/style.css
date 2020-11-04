@@ -1,0 +1,56 @@
+html,
+body {
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card {
+    display: inline-block;
+    margin-right: 10px;
+    width: 100%;
+    caption-side: bottom;
+    text-align: center;
+    font-size: 150%;
+    font-style: italic;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .col-2 {
+        width: 100%;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    .col-2 {
+        width: 100%;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    .col-2 {
+        width: 48%;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    .col-2 {
+        width: 32%;
+    }
+}
