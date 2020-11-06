@@ -1,0 +1,62 @@
+html,
+body {
+    width: 100%;
+    background-color: rgb(159, 163, 163);
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    padding: 20px;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+}
+
+.left {
+    float: left;
+    width: 50%;
+}
+
+.right {
+    float: right;
+    width: 50%;
+}
+
+.p1 {
+    position: absolute;
+    top: 10%;
+    width: 30%;
+    z-index: 1;
+}
+
+.p2 {
+    position: absolute;
+    top: 15%;
+    right: 3%;
+    width: 30%;
+    z-index: 1;
+}
+
+.p3 {
+    position: absolute;
+    top: 31%;
+    right: 15%;
+    width: 30%;
+    z-index: 1;
+}
+
+.p1:hover,
+.p2:hover,
+.p3:hover {
+    z-index: 2;
+    transition: all 0.2s;
+    /* Ewentualnie żeby wogóle nie zmienić położenie obrazków, trzeba odkomentować poniższą linię (czyli zmniejszyć ręcznie padding na długość granicy) */
+    /* padding: 8px; */
+    border: 12px solid green;
+}
