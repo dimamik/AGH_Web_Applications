@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 html,
 body {
     width: 100%;
@@ -5,7 +6,7 @@ body {
     background-color: antiquewhite;
     margin: 0;
     padding: 0;
-    font-family: ;
+    font-family: 'Yeseva One', cursive;
 }
 
 .card {
@@ -15,6 +16,7 @@ body {
     height: 80%;
     perspective: 1000px;
     text-align: center;
+    margin-right: 2%;
 }
 
 .card_inner {
@@ -46,13 +48,7 @@ body {
 
 .card_front {
     background-color: rgb(241, 208, 208);
-    color: black;
-    /* position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: rotateY(0deg);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; */
+    color: rgb(0, 0, 0);
 }
 
 .card_back {
@@ -65,6 +61,11 @@ body {
 .main {
     width: 100%;
     height: 100%;
+}
+
+.main p {
+    margin-top: 0;
+    font-size: 3vw;
 }
 
 .img_with_cityname {
@@ -81,12 +82,15 @@ body {
     position: absolute;
     bottom: -5%;
     right: 0;
-    font-size: 180%;
+    font-size: 3vw;
     background-color: rgba(42, 204, 204, 0.7);
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transform: rotateY(0deg);
 }
+
+
+/* Back card text positioning and design */
 
 .container_back {
     position: relative;
@@ -96,37 +100,29 @@ body {
 
 .container_back .first {
     position: absolute;
-    font-size: 250%;
-    left: 39%;
-    top: 10%;
+    margin: 0;
+    margin-left: 20%;
+    margin-top: 10%;
+    font-size: 6vw;
 }
 
 .container_back .price {
     position: absolute;
-    font-size: 450%;
-    left: 30%;
-    top: 20%;
-    justify-content: center;
-    align-self: center;
+    margin: 0;
+    margin-left: 10%;
+    margin-top: 35%;
+    font-size: 10vw;
 }
 
 .container_back .reserve {
+    position: absolute;
     text-decoration: none;
     color: black;
     cursor: pointer;
-    position: absolute;
     background-color: red;
-    border-radius: 25%;
-    width: 46%;
-    font-size: 250%;
-    left: 28%;
-    top: 60%;
-    justify-content: center;
-    align-self: center;
+    border-radius: 20%;
+    margin: 0;
+    margin-left: -35%;
+    margin-top: 80%;
+    font-size: 5vw;
 }
-
-
-/* 
-P.S:
-Zbudowana strona nie jest responsywna i teksty (choziaż są wyrażone w prcentach) nie są responsywne
-*/
