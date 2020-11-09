@@ -1,0 +1,39 @@
+.home {
+    position: relative;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    font-size: 2vw;
+    margin-left: 25%;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.home h1 {
+    margin: 5px;
+}
+
+
+/* Animation */
+
+.home {
+    animation: typewriter 2s steps(44) 1s 1 normal both, blink 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 26em;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}

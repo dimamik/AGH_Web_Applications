@@ -1,0 +1,176 @@
+/* nav main elements*/
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    background: rgb(200, 162, 162);
+    background: linear-gradient(90deg, rgba(200, 162, 162, 1) 0%, rgba(167, 100, 100, 1) 100%);
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .1);
+}
+
+.nav a {
+    color: rgb(255, 247, 247);
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+    /* Imitation of removal with the help of overflow */
+    overflow: hidden;
+}
+
+.nav li a {
+    display: block;
+    padding: 15px 15px;
+}
+
+.nav li a:hover,
+.nav .menu-btn:hover,
+.nav .menu-icon:hover {
+    background-color: #be7474;
+}
+
+.nav .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+
+/* Menu bar both for phones and pc */
+
+.nav .menu {
+    clear: both;
+    text-align: center;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+
+/* Menu icon for phones */
+
+.nav .menu-icon {
+    cursor: pointer;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+}
+
+
+/* Middle line */
+
+.nav .menu-icon .nav-icon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+
+/* Top and Bottom lines */
+
+.nav .menu-icon .nav-icon:before,
+.nav .menu-icon .nav-icon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.nav .menu-icon .nav-icon:before {
+    top: 5px;
+}
+
+.nav .menu-icon .nav-icon:after {
+    top: -5px;
+}
+
+
+/* Checkbox specifications */
+
+.nav .menu-btn {
+    display: none;
+}
+
+
+/* Controll the menu bar depending on checkbox status */
+
+.nav .menu-btn:checked~.menu {
+    max-height: 240px;
+}
+
+
+/*To unshow the middle line*/
+
+.nav .menu-btn:checked~.menu-icon .nav-icon {
+    background: transparent;
+}
+
+
+/* To rotate lines that we have */
+
+.nav .menu-btn:checked~.menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.nav .menu-btn:checked~.menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+
+/* When display width>800px*/
+
+@media (min-width: 800px) {
+    .nav li {
+        float: left;
+    }
+    .nav li a {
+        padding: 20px 30px;
+    }
+    .nav .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .nav .menu-icon {
+        display: none;
+    }
+}
+
+
+/* Animation of links in menu bar on phone */
+
+@media (max-width: 800px) {
+    .nav li a:hover,
+    .nav li a:active {
+        font-size: larger;
+        transition: all 0.1s;
+    }
+}
+
+
+/* Animation of navbar changing style when out of main */
+
+section.biografy:hover~nav {
+    font-style: italic;
+    background: none;
+    box-shadow: none;
+}
+
+/* To activate section-button when on section */
+.biografy:hover ~ nav .menu a[href="#biografy"],
+.hobbies:hover ~ nav .menu a[href="#hobbies"],
+.projects:hover ~ nav .menu a[href="#projects"]{
+    background-color: #be7474;
+}

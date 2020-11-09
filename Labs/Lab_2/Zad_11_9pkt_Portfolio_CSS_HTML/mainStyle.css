@@ -1,0 +1,153 @@
+/* Importing google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+/* Document */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: rgb(185, 177, 177);
+    background: linear-gradient(90deg, rgba(185, 177, 177, 1) 0%, rgba(180, 126, 126, 1) 100%);
+    font-family: 'Yeseva One', cursive;
+}
+
+li,
+ul,
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* Home header */
+
+.home {
+    margin-top: 80px;
+    width: 100%;
+}
+
+.home h1 {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Home appearence effect */
+
+
+/* Biografy */
+
+.biografy {
+    width: 100%;
+}
+
+.biografy h1 {
+    margin-left: 5%;
+}
+
+.biografy .image1 {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.biografy img {
+    max-width: 450px;
+    width: 40%;
+    float: left;
+    shape-outside: circle(47%);
+    clip-path: circle(45% at 50% 50%);
+}
+
+
+/* Hobbies */
+
+.hobbies {
+    width: 100%;
+}
+
+.hobbies h1 {
+    margin-left: 5%;
+}
+
+.hobbies .img1 {
+    width: 40%;
+    float: right;
+    max-width: 500px;
+    margin: 10px;
+}
+
+.hobbies .img2 {
+    width: 40%;
+    float: left;
+    max-width: 500px;
+    margin: 10px;
+}
+
+.hobbies .img1:hover,
+.hobbies .img2:hover {
+    transform: scale(1.2, 1.2);
+    transition: all 1s;
+}
+
+
+/* projects */
+.projects h1{
+    margin-left: 5%;
+}
+
+/* sections to comfort navigate*/
+
+section {
+    padding-top: 3%;
+}
+
+
+/* Back arrow */
+
+.back_to_top_arrow {
+    position: fixed;
+    width: 3%;
+    height: 5%;
+    top: 85%;
+    margin: 0;
+    left: 93%;
+    bottom: 0;
+    z-index: 10;
+    overflow: visible;
+}
+
+section.biografy:hover~.back_to_top_arrow,
+nav:hover~.back_to_top_arrow,
+.home:hover~.back_to_top_arrow {
+    display: none;
+}
+
+.back_to_top_arrow p {
+    margin: 0;
+    padding-right: 3.6vw;
+    opacity: 0.7;
+    background-color: red;
+    border-radius: 20px;
+    font-size: 6vw;
+}
+
+
+/* Media */
+
+
+/* Tablets and under */
+
+@media (max-width: 768px) {
+    .biografy img {
+        display: none;
+    }
+    .hobbies .img1,
+    .hobbies .img2 {
+        max-width: none;
+        float: none;
+        width: 90%;
+    }
+}
