@@ -14,8 +14,9 @@ body {
     display: inline-block;
     background-color: transparent;
     width: 37%;
-    height: 60vh;
-    min-height: 60vw;
+    height: 50vw;
+    max-height: 80vh;
+    min-height: 40vw;
     perspective: 1000px;
     text-align: center;
     margin-right: 2%;
@@ -69,7 +70,7 @@ body {
     color: rgb(66, 59, 59);
     width: 100%;
     margin-top: 0;
-    font-size: 3vw;
+    font-size: 1.5vw;
     border-bottom: 0.5px solid rgba(104, 101, 101, 0.205);
 }
 
@@ -108,8 +109,8 @@ body {
 
 .container_back .first {
     position: relative;
-    margin-top: 30%;
-    font-size: 4vw;
+    margin-top: 20%;
+    font-size: 2vw;
     margin-bottom: 0;
 }
 
@@ -117,7 +118,7 @@ body {
     position: relative;
     margin: 0;
     margin-top: 5%;
-    font-size: 12vw;
+    font-size: 10vw;
 }
 
 .container_back .button {
