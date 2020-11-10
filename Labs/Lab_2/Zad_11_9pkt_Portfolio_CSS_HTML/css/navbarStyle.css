@@ -168,9 +168,11 @@ section.biografy:hover~nav {
     box-shadow: none;
 }
 
+
 /* To activate section-button when on section */
-.biografy:hover ~ nav .menu a[href="#biografy"],
-.hobbies:hover ~ nav .menu a[href="#hobbies"],
-.projects:hover ~ nav .menu a[href="#projects"]{
+
+.biografy:hover~nav .menu a[href="#biografy"],
+.hobbies:hover~nav .menu a[href="#hobbies"],
+.projects:hover~nav .menu a[href="#projects"] {
     background-color: #be7474;
 }

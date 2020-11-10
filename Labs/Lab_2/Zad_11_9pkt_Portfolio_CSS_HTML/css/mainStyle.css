@@ -35,9 +35,6 @@ a {
 }
 
 
-/* Home appearence effect */
-
-
 /* Biografy */
 
 .biografy {
@@ -94,14 +91,20 @@ a {
 
 
 /* projects */
-.projects h1{
+
+.projects {
+    width: 100%;
+}
+
+.projects h1 {
     margin-left: 5%;
 }
 
-/* sections to comfort navigate*/
+
+/* sections to make navigation comfortable*/
 
 section {
-    padding-top: 3%;
+    padding-top: 4%;
 }
 
 

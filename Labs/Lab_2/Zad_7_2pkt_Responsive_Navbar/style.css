@@ -27,9 +27,9 @@ a {
 }
 
 
-/* Header main elements*/
+/* nav main elements*/
 
-.header {
+.nav {
     position: fixed;
     width: 100%;
     z-index: 3;
@@ -37,25 +37,25 @@ a {
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .1);
 }
 
-.header ul {
+.nav ul {
     margin: 0;
     padding: 0;
     /* Imitation of removal with the help of overflow */
     overflow: hidden;
 }
 
-.header li a {
+.nav li a {
     display: block;
     padding: 15px 15px;
 }
 
-.header li a:hover,
-.header .menu-btn:hover,
-.header .menu-icon:hover {
+.nav li a:hover,
+.nav .menu-btn:hover,
+.nav .menu-icon:hover {
     background-color: #fff5f5;
 }
 
-.header .logo {
+.nav .logo {
     display: block;
     float: left;
     font-size: 2em;
@@ -66,7 +66,7 @@ a {
 
 /* Menu bar both for phones and pc */
 
-.header .menu {
+.nav .menu {
     clear: both;
     text-align: center;
     max-height: 0;
@@ -76,7 +76,7 @@ a {
 
 /* Menu icon for phones */
 
-.header .menu-icon {
+.nav .menu-icon {
     cursor: pointer;
     float: right;
     padding: 28px 20px;
@@ -86,7 +86,7 @@ a {
 
 /* Middle line */
 
-.header .menu-icon .nav-icon {
+.nav .menu-icon .nav-icon {
     background: #333;
     display: block;
     height: 2px;
@@ -98,8 +98,8 @@ a {
 
 /* Top and Bottom lines */
 
-.header .menu-icon .nav-icon:before,
-.header .menu-icon .nav-icon:after {
+.nav .menu-icon .nav-icon:before,
+.nav .menu-icon .nav-icon:after {
     background: #333;
     content: '';
     display: block;
@@ -109,44 +109,44 @@ a {
     width: 100%;
 }
 
-.header .menu-icon .nav-icon:before {
+.nav .menu-icon .nav-icon:before {
     top: 5px;
 }
 
-.header .menu-icon .nav-icon:after {
+.nav .menu-icon .nav-icon:after {
     top: -5px;
 }
 
 
 /* Checkbox specifications */
 
-.header .menu-btn {
+.nav .menu-btn {
     display: none;
 }
 
 
 /* Controll the menu bar depending on checkbox status */
 
-.header .menu-btn:checked~.menu {
+.nav .menu-btn:checked~.menu {
     max-height: 240px;
 }
 
 
 /*To unshow the middle line*/
 
-.header .menu-btn:checked~.menu-icon .nav-icon {
+.nav .menu-btn:checked~.menu-icon .nav-icon {
     background: transparent;
 }
 
 
 /* To rotate lines that we have */
 
-.header .menu-btn:checked~.menu-icon .nav-icon:before {
+.nav .menu-btn:checked~.menu-icon .nav-icon:before {
     transform: rotate(-45deg);
     top: 0;
 }
 
-.header .menu-btn:checked~.menu-icon .nav-icon:after {
+.nav .menu-btn:checked~.menu-icon .nav-icon:after {
     transform: rotate(45deg);
     top: 0;
 }
@@ -155,18 +155,18 @@ a {
 /* When display width>800px*/
 
 @media (min-width: 800px) {
-    .header li {
+    .nav li {
         float: left;
     }
-    .header li a {
+    .nav li a {
         padding: 20px 30px;
     }
-    .header .menu {
+    .nav .menu {
         clear: none;
         float: right;
         max-height: none;
     }
-    .header .menu-icon {
+    .nav .menu-icon {
         display: none;
     }
 }
@@ -175,8 +175,8 @@ a {
 /* Animation of links in menu bar on phone */
 
 @media (max-width: 800px) {
-    .header li a:hover,
-    .header li a:active {
+    .nav li a:hover,
+    .nav li a:active {
         font-size: larger;
         transition: all 0.1s;
     }

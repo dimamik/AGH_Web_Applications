@@ -74,12 +74,12 @@ body {
     animation-timing-function: ease-in-out;
     animation-name: rotate;
     animation-duration: 4s;
-    animation-iteration-count: infinite; animation-direction: alternate-reverse;
-
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
-@keyframes rotate{
-    
-    to{
+
+@keyframes rotate {
+    to {
         transform: rotate(360deg);
     }
 }
