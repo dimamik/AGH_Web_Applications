@@ -115,3 +115,31 @@ button:active {
     height: 15%;
     border-radius: 10px;
 }
+
+.right {
+    animation: slideFromRightToLeft;
+    animation-duration: 2s;
+}
+
+@keyframes slideFromRightToLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.left {
+    animation: slideFromLeftToRight;
+    animation-duration: 2s;
+}
+
+@keyframes slideFromLeftToRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
