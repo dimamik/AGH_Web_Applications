@@ -1,11 +1,12 @@
 html,
-body{
+body {
     width: 100%;
     height: 100%;
     margin: 0;
-
 }
-#bigger{
+
+#bigger {
+    position: relative;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -14,7 +15,9 @@ body{
     width: 20%;
     height: 40%;
 }
-#medium{
+
+#medium {
+    position: relative;
     cursor: pointer;
     background-color: red;
     width: 60%;
@@ -23,12 +26,39 @@ body{
     justify-content: center;
     align-items: center;
 }
-#small{
+
+#small {
+    position: relative;
     cursor: pointer;
     background-color: yellow;
-    width: 40%;
+    width: 70%;
     height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+p {
+    -moz-user-select: none;
+    color: white;
+    position: absolute;
+    top: 0%;
+    /* 
+    To disable user clicks
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none; */
+}
+
+#small p {
+    color: black;
+}
+
+#totalCounts {
+    border: 3px solid blue;
+    width: fit-content;
+}
+
+.commenttext {
+    margin-top: 2%;
 }
