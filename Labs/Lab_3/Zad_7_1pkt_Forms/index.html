@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Wniosek o Emeryturę</h1>
+    <div class="form">
+        <div class="field">
+            <h3>Name:</h3>
+            <input type="text" id="name" placeholder="name" required="required">
+            <p id="mistake-name">Mistake text</p>
+        </div>
+        <div class="field">
+            <h3>Surname:</h3>
+            <input type="text" id="surname" placeholder="surname" required="required">
+            <p id="mistake-surname">Mistake text</p>
+        </div>
+        <div class="field">
+            <h3>Phone:</h3>
+            <input type="tel" id="phone" placeholder="phone" required="required">
+            <p id="mistake-phone">Mistake text</p>
+        </div>
+        <div class="field">
+            <h3>Gender:</h3>
+            <form id="gender">
+                <input type="radio" id="male" name="gender" value="male" checked="checked">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+            </form>
+        </div>
+        <div class="field">
+            <h3>Date of birth:</h3>
+            <input type="date" id="date" placeholder="date" required="required" min="1900-01-01">
+            <p id="mistake-dateEl">Mistake text</p>
+        </div>
+        <div class="field">
+            <h3>Planowana Emerytura:</h3>
+            <input type="year" id="rok_emerytura" placeholder="Rok pójścia na emeryturę" required="required">
+            <p id="mistake-rok_emerytura">Mistake text</p>
+        </div>
+        <input type="button" value="Subbmit" id="submit_button">
+    </div>
+</body>
+
+</html>
