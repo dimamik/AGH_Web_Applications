@@ -1,0 +1,98 @@
+@import url('https://css.gg/trash.css');
+html,
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(238, 236, 236);
+}
+div{
+    margin-right: 2%;
+}
+/* Adding Panel */
+
+.add_panel{
+    width: 90%;
+    position: relative;
+    display: block;
+    /* Styling */
+    background-color: white;
+    box-shadow: 2px 2px 5px grey;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.add_name_surname{
+    display: inline-block;
+    width: 35%;
+}
+.add_phone{
+    display: inline-block;
+    width: 35%;
+}
+.add_button{
+    display: inline-block;
+    width: 20%;
+    
+}
+input{
+    width: 100%;
+    height: 3vw;
+}
+#add_button{
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border-radius: 5%;
+    
+}
+
+/* Catalog */
+
+.catalog{
+    width: 100%;
+}
+
+.item{
+    width: 90%;
+    position: relative;
+    display: block;
+    /* Styling */
+    background-color: white;
+    box-shadow: 2px 2px 5px grey;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
+
+.name_phone{
+    position: relative;
+    width: 30%;
+    height: 100%;
+}
+
+.name_surname{
+    position: relative;
+}
+.name_surname p {
+    padding-top: 15%;
+    position: relative;
+    font-weight: bold;
+}
+.trash{
+    position: absolute;
+    left: 95%;
+    top: 50%;
+    width: 5%;
+}
+.gg-trash{
+    cursor: pointer;
+    right: 2%;
+    bottom: 3vh;
+    background-color: white;
+}
+
+#template{
+    display: none;
+}
