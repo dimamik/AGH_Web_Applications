@@ -7,6 +7,10 @@ Display: -  The default display value for most elements is block or inline.
     :none - The element is completely removed
     :inherit - Inherits this property from its parent element.
 
+UWAGA NA 
+	box-sizing: border-box; ?
+	box-sizing: content-box; ?
+
 Position:
     :static - elements are not affected by the top, bottom, left, and right properties, positioned by the normal page flow.
     :relative - relative to its normal position (left/right/top/bottom)
