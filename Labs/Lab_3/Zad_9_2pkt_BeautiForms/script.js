@@ -21,10 +21,46 @@ function appendNewChild(name, phone) {
     );
 }
 
+function validateName(text) {
+
+    for (letter of text) {
+        if (!(/[a-zA-Z]/).test(letter)) {
+            alert("Name should contain only letters")
+            return false;
+        }
+
+    }
+    if (text.length < 1) {
+        alert("Name can't be empty")
+        return false;
+    }
+    return true;
+}
+
+function validatePhone(text) {
+
+    for (letter of text) {
+        if (!(/[0-9+]/).test(letter)) {
+            alert("Phone must contain only numbers or +")
+            return false;
+        }
+
+    }
+    if (text.length < 5) {
+        alert("Phone_len jest za mala")
+        return false;
+    }
+    return true;
+}
+
 function add_element() {
     let name = add_name_inputEl.value;
     let phone = add_phone_inputEl.value;
-    appendNewChild(name, phone);
+    if (validateName(name) && validatePhone(phone)) {
+        appendNewChild(name, phone);
+    }
+
+
 
 }
 function delete_el(itemEl) {
