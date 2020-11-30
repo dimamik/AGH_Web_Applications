@@ -1,0 +1,36 @@
+{
+    "List2": {
+    "cars" : [
+        {
+            "name": "Opel"
+        },
+        {
+            "name": "Porshe"
+        }
+    ],
+    "fruits": [
+        {
+            "name": "apple"
+        },
+        {
+            "name": "pinapple"
+        }
+    ],
+    "vegetables" : [
+        {
+            "name": "salat"
+        },
+        {
+            "name": "tomato"
+        }
+    ],
+    "clothes" : [
+        {
+            "name": "tshirt"
+        },
+        {
+            "name": "skirt"
+        }
+    ]
+}
+}

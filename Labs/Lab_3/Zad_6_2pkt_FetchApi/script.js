@@ -45,5 +45,5 @@ function transformData(persons) {
         "List of persons with r in name: \n" + JSON.stringify(listOfPersonsWithRInName) + "\n\n" +
 
         "Second Oldest and Third Youngest Persons: \n" + JSON.stringify(listOf2OldestAnd3YoungestPersons);
-
+    
 }
