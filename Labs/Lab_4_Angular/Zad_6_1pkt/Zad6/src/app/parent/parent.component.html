@@ -1,0 +1,6 @@
+<div>
+  <p> Number of clicks: {{clickNumber}}</p>
+  <!--  Parent listens for child's event -->
+  <app-child [isFull]="! canClick" (clicked)="addCounts()" (reset)="resetCounts()">
+  </app-child>
+</div>
