@@ -1,0 +1,81 @@
+<div class="container">
+  <div>
+    <h1>Add new trip</h1>
+    <form novalidate
+          [formGroup]="myForm"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               formControlName="name_of_trip">
+        <div *ngIf="name_of_trip.errors && (name_of_trip.dirty || name_of_trip.touched)"
+             class="alert-danger alert"
+        >
+          Name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Country</label>
+        <input type="text" class="form-control" id="country"
+               required
+               formControlName="country">
+        <div *ngIf="country.errors && (country.dirty || country.touched)"
+             class="alert-danger alert"
+        >
+          Country is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Date Starting</label>
+        <input type="date" class="form-control" id="data_start"
+               required
+               formControlName="data_start">
+        <div *ngIf="data_start.errors && (data_start.dirty || data_start.touched)"
+             class="alert-danger alert"
+        >
+          data_start is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Date Ending</label>
+        <input type="date" class="form-control" id="data_end"
+               required
+               formControlName="data_end">
+        <div *ngIf="data_end.errors && (data_end.dirty || data_end.touched)"
+             class="alert-danger alert"
+        >
+          data_end is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Price</label>
+        <input type="number" class="form-control" id="price"
+               required
+               formControlName="price">
+        <div *ngIf="price.errors && (price.dirty || price.touched)"
+             class="alert-danger alert"
+        >
+          Price is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Maximum places</label>
+        <input type="number" class="form-control" id="max_places"
+               required
+               formControlName="max_places">
+        <div *ngIf="max_places.errors && (max_places.dirty || max_places.touched)"
+             class="alert-danger alert"
+        >
+          max_places is required
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success m-1" [disabled]="!myForm.valid" (click)="addNewTrip()">Submit
+      </button>
+    </form>
+  </div>
+</div>

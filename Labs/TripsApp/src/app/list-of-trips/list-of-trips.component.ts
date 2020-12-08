@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {TripsList} from '../trips-list/trips-list';
 
 @Component({
   selector: 'app-list-of-trips',
@@ -13,14 +14,5 @@ export class ListOfTripsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  trips = [
-    {
-      'name': 'name',
-      'country': 'country',
-      'data_start': 'data_start',
-      'data_end': 'data_end',
-      'price': 'price',
-      'max_places': 'max_places'
-    }
-  ];
+  items = TripsList.trips;
 }

@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TripsList} from '../trips-list/trips-list';
 
 
 @Component({
@@ -12,20 +13,29 @@ export class SingleTripComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  isNotFull = true;
   isAddedAny = false;
 
-
-  // tslint:disable-next-line:typedef
+  @Input() singleTrip;
   deleteClicked($event: MouseEvent) {
-    //TODO Clicked delete
+      this.singleTrip.selected_places -= 1;
+      if (this.singleTrip.selected_places == 0) {
+        this.isAddedAny = false;
+      }
+      if (this.singleTrip.selected_places!= this.singleTrip.max_places) {
+        this.isNotFull = true;
+      }
   }
 
   addClicked($event: MouseEvent) {
-
+      this.singleTrip.selected_places += 1;
+      this.isAddedAny = true;
+      if (this.singleTrip.selected_places == this.singleTrip.max_places) {
+        this.isNotFull = false;
+      }
   }
 
   deleteTripClicked($event: MouseEvent) {
-
+    TripsList.trips.splice(this.singleTrip, 1);
   }
 }

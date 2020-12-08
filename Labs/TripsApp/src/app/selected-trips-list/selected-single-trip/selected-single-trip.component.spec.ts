@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {SingleTripComponent} from './single-trip.component';
+import {SelectedSingleTripComponent} from './selected-single-trip.component';
 
-describe('SingleTripComponent', () => {
-  let component: SingleTripComponent;
-  let fixture: ComponentFixture<SingleTripComponent>;
+describe('SelectedSingleTripComponent', () => {
+  let component: SelectedSingleTripComponent;
+  let fixture: ComponentFixture<SelectedSingleTripComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SingleTripComponent]
+      declarations: [SelectedSingleTripComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SingleTripComponent);
+    fixture = TestBed.createComponent(SelectedSingleTripComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
