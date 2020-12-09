@@ -9,6 +9,9 @@ import {FormTripComponent} from './form-trip/form-trip.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SelectedTripsListComponent} from './selected-trips/selected-trips-list/selected-trips-list.component';
 import {SelectedSingleTripComponent} from './selected-trips/selected-single-trip/selected-single-trip.component';
+import {DataValidator} from './form-trip/data-validator';
+
+
 
 
 @NgModule({
@@ -19,14 +22,13 @@ import {SelectedSingleTripComponent} from './selected-trips/selected-single-trip
     FormTripComponent,
     SelectedTripsListComponent,
     SelectedSingleTripComponent,
-
+    DataValidator,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -34,4 +36,5 @@ import {SelectedSingleTripComponent} from './selected-trips/selected-single-trip
 export class AppModule {
   constructor() {
   }
+
 }

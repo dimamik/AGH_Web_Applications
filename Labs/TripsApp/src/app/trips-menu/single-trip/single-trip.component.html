@@ -1,7 +1,7 @@
 <!--Single card style-->
-<div
+<div style="padding-left: 5%"
 
-  [ngStyle]="{
+     [ngStyle]="{
   'background-color': (singleTrip.max_places - singleTrip.selected_places < 3) ? 'darkgoldenrod' : 'antiquewhite',
    'color': (singleTrip.max_places - singleTrip.selected_places < 3) ? 'white' : 'black'
       }
@@ -16,26 +16,36 @@
       <div class="card_description float-right" style="width: 50%">
         <div class="card_destination">
           <h5>Destination:</h5>
-          <p>{{singleTrip.country | titlecase }}</p>
+          <p>{{singleTrip.country | uppercase }}</p>
           <h6>Date</h6>
           <div class="date">
             <p class="m-1">{{singleTrip.data_start}}</p>
             <p class="m-1">{{singleTrip.data_end}}</p>
           </div>
+          <h6>Description</h6>
+          <p>{{singleTrip.description}}</p>
         </div>
       </div>
     </div>
-    <div class="card_places m-3" *ngIf="singleTrip.selected_places < singleTrip.max_places">
+    <div class="card_places m-1" style="margin-top: 5%; width: 30%" *ngIf="singleTrip.selected_places < singleTrip.max_places"
+         [ngStyle]="{
+    'background-color': (singleTrip.selected_places >= 10) ? '#f0a541' : '#f3d5ac'
+    }
+    "
+    >
       <p>Places: {{singleTrip.max_places - singleTrip.selected_places}}/{{singleTrip.max_places}}</p>
     </div>
     <div class="no_more_places m-3 " *ngIf="singleTrip.selected_places== singleTrip.max_places">
       <p style="color: #ff0000"> No places left</p>
     </div>
   </div>
-  <div class="card_footer m-0 w-100 ">
+  <div class="card_footer m-0 w-100 position-relative">
 
-    <h4 class="card_price m-0 d-inline-block center-block"
-        style="width: 40%">{{singleTrip.price | currency:'USD':'$'}}</h4>
+    <h4 class="card_price m-0 d-inline-block center-block "
+
+        [ngStyle]=" isLowest() && {'background-color' : 'green'} || isHigh() && {'background-color' : 'red'}  "
+
+        style="width: 40%; position: relative; bottom: 0;">{{singleTrip.price | currency:'USD':'$'}}</h4>
 
     <div class="card_buttons float-right " style="width: 60%">
       <div *ngIf="isAddedAny" class="icon w-25 d-inline-block m-1 float-right" (click)="deleteClicked()">
@@ -50,3 +60,4 @@
     </div>
   </div>
 </div>
+

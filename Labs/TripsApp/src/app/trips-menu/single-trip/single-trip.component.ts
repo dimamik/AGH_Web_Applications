@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TripsList} from '../../trips-list-data/trips-list';
-import {StarRatingComponent} from 'ng-starrating';
-
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-single-trip',
@@ -9,15 +8,34 @@ import {StarRatingComponent} from 'ng-starrating';
   styleUrls: ['./single-trip.component.css']
 })
 export class SingleTripComponent implements OnInit {
-
-
   ngOnInit(): void {
   }
 
   isNotFull = true;
   isAddedAny = false;
-  currentRate:number = 0;
+  currentRate: number = 0;
   @Input() singleTrip;
+  @Input() highest;
+  @Input() cheaper;
+
+  tripList = TripsList;
+
+  isHigh() {
+    if (this.tripList.trips.indexOf(this.singleTrip) == this.highest) {
+      return true;
+
+    }
+    return false;
+  }
+
+
+  isLowest() {
+    if (this.tripList.trips.indexOf(this.singleTrip) == this.cheaper) {
+      return true;
+
+    }
+    return false;
+  }
 
   deleteClicked() {
     this.singleTrip.selected_places -= 1;
@@ -38,7 +56,7 @@ export class SingleTripComponent implements OnInit {
   }
 
   deleteTripClicked() {
-    TripsList.trips.splice(this.singleTrip, 1);
-  }
 
+    this.tripList.trips.splice(this.tripList.trips.indexOf(this.singleTrip), 1);
+  }
 }

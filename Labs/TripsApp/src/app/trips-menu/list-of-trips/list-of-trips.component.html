@@ -1,10 +1,10 @@
-<div class="container m-0">
-  <div class="row ">
+<div class="row w-100">
 
-    <app-single-trip *ngFor="let item of items; let i = index;" [singleTrip]="item"
-                     class="card col-12 col-xs-6 col-sm-5 col-md-4  p-0 m-0 p-2 border-0" >
-
-    </app-single-trip>
-  </div>
+  <app-single-trip *ngFor="let item of items; let i = index;" [singleTrip]="item"
+                   class="card col-12 col-sm-6 col-md-4 col-xl-3 m-0 p-2 border-0"
+                   [cheaper]="getCheapest()" [highest]="getHighest()"
+  >
+  </app-single-trip>
 </div>
+
 
