@@ -23,7 +23,7 @@ export class TripsList {
       selected_places: 0
     },
     {
-      name: 'Unforgettable trip',
+      name: 'Fine trip',
       country: 'Belarus',
       data_start: '08.12.2020',
       data_end: '15.12.2020',

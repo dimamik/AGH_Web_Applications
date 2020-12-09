@@ -1,14 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { SingleTripComponent } from './single-trip/single-trip.component';
-import { ListOfTripsComponent } from './list-of-trips/list-of-trips.component';
-import { FormTripComponent } from './form-trip/form-trip.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {SingleTripComponent} from './trips-menu/single-trip/single-trip.component';
+import {ListOfTripsComponent} from './trips-menu/list-of-trips/list-of-trips.component';
+import {FormTripComponent} from './form-trip/form-trip.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { SelectedTripsListComponent } from './selected-trips-list/selected-trips-list.component';
-import { SelectedSingleTripComponent } from './selected-trips-list/selected-single-trip/selected-single-trip.component';
+import {SelectedTripsListComponent} from './selected-trips/selected-trips-list/selected-trips-list.component';
+import {SelectedSingleTripComponent} from './selected-trips/selected-single-trip/selected-single-trip.component';
+
 
 @NgModule({
   declarations: [
@@ -17,15 +18,20 @@ import { SelectedSingleTripComponent } from './selected-trips-list/selected-sing
     ListOfTripsComponent,
     FormTripComponent,
     SelectedTripsListComponent,
-    SelectedSingleTripComponent
+    SelectedSingleTripComponent,
+
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+  }
+}

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TripsList} from '../trips-list/trips-list';
+import {TripsList} from '../../trips-list-data/trips-list';
 
 @Component({
   selector: 'app-selected-trips-list',

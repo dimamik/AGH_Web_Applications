@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Trip} from '../../trips-list/trip';
+import {Trip} from '../../trips-list-data/trip';
 
 @Component({
   selector: 'app-selected-single-trip',
