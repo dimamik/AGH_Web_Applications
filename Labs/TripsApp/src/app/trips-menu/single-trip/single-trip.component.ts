@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TripsList} from '../../trips-list-data/trips-list';
-import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-single-trip',
@@ -8,33 +7,28 @@ import {CommonModule} from '@angular/common';
   styleUrls: ['./single-trip.component.css']
 })
 export class SingleTripComponent implements OnInit {
-  ngOnInit(): void {
-  }
-
   isNotFull = true;
   isAddedAny = false;
-  currentRate: number = 0;
+  currentRate: number;
+  tripList = TripsList;
   @Input() singleTrip;
   @Input() highest;
   @Input() cheaper;
+  @Output() deleteSelected = new EventEmitter<number>();
 
-  tripList = TripsList;
+  ngOnInit(): void {
+    this.currentRate = this.singleTrip.rating;
+  }
 
   isHigh() {
-    if (this.tripList.trips.indexOf(this.singleTrip) == this.highest) {
-      return true;
+    return this.tripList.trips.indexOf(this.singleTrip) == this.highest;
 
-    }
-    return false;
   }
 
 
   isLowest() {
-    if (this.tripList.trips.indexOf(this.singleTrip) == this.cheaper) {
-      return true;
+    return this.tripList.trips.indexOf(this.singleTrip) == this.cheaper;
 
-    }
-    return false;
   }
 
   deleteClicked() {
@@ -57,6 +51,10 @@ export class SingleTripComponent implements OnInit {
 
   deleteTripClicked() {
 
-    this.tripList.trips.splice(this.tripList.trips.indexOf(this.singleTrip), 1);
+    this.deleteSelected.emit(this.tripList.trips.indexOf(this.singleTrip));
+  }
+
+  setRating(param) {
+    this.singleTrip.rating = param;
   }
 }

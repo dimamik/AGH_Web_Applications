@@ -1,6 +1,9 @@
 import {Directive} from '@angular/core';
 import {FormControl, NG_VALIDATORS, Validator} from '@angular/forms';
 
+/**
+ * Class to validate data in Forms (in this case to be larger than currentDate)
+ */
 @Directive({
   selector: '[appForbiddenDate]',
   providers: [{provide: NG_VALIDATORS, useExisting: DataValidator, multi: true}]

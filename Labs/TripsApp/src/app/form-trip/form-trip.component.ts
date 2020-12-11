@@ -10,6 +10,7 @@ import {DataValidator} from './data-validator';
 })
 export class FormTripComponent implements OnInit {
 
+  // Form values
   name_of_trip: FormControl;
   country: FormControl;
   data_start: FormControl;
@@ -48,7 +49,8 @@ export class FormTripComponent implements OnInit {
 
     ]);
     this.data_end = new FormControl('', [
-      Validators.required
+      Validators.required,
+      new DataValidator().validate
     ]);
     this.price = new FormControl('', [
       Validators.required,

@@ -15,12 +15,18 @@ export class ListOfTripsComponent implements OnInit {
   }
 
   items = TripsList.trips;
+  countryNameFilter: string;
+  price_starting: number;
+  price_ending: number;
+  data_start: Date;
+  data_end: Date;
+  rating: number;
 
-  getCheapest(){
-    let min_price = Infinity
+  getCheapest() {
+    let min_price = Infinity;
     let index_to_return = 0;
-    for (let i=0; i< this.items.length; i++){
-      if (min_price >  parseInt(this.items[i].price)){
+    for (let i = 0; i < this.items.length; i++) {
+      if (min_price > parseInt(this.items[i].price)) {
         min_price = parseInt(this.items[i].price);
         index_to_return = i;
       }
@@ -28,15 +34,28 @@ export class ListOfTripsComponent implements OnInit {
     return index_to_return;
   }
 
-  getHighest(){
-    let max_price = - Infinity
+  getHighest() {
+    let max_price = -Infinity;
     let index_to_return = 0;
-    for (let i=0; i< this.items.length; i++){
-      if (max_price <  parseInt(this.items[i].price)){
+    for (let i = 0; i < this.items.length; i++) {
+      if (max_price < parseInt(this.items[i].price)) {
         max_price = parseInt(this.items[i].price);
         index_to_return = i;
       }
     }
     return index_to_return;
+  }
+
+  deleteTrip(params) {
+    this.items.splice(params, 1);
+  }
+
+  resetFilter() {
+    this.countryNameFilter = undefined;
+    this.price_starting = undefined;
+    this.price_ending = undefined;
+    this.data_start = undefined;
+    this.data_end = undefined;
+    this.rating = undefined;
   }
 }

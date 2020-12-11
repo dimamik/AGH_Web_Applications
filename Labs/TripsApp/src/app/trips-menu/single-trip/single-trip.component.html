@@ -7,8 +7,9 @@
       }
 ">
   <div class="card_head">
-    <h3 class="card_name">{{singleTrip.name | uppercase}}</h3>
-    <!--  TODO   Component representing stars RATING fitted and floated right -->
+    <h3 class="card_name text-center">{{singleTrip.name | uppercase}}</h3>
+    <app-rating-trips (ratingSelected)="setRating($event)" [selectedRating]="currentRate">
+    </app-rating-trips>
   </div>
   <div class="card_main ">
     <div class="img_and_description ">
@@ -17,17 +18,18 @@
         <div class="card_destination">
           <h5>Destination:</h5>
           <p>{{singleTrip.country | uppercase }}</p>
-          <h6>Date</h6>
+          <h6>Date (DD:MM:YYYY)</h6>
           <div class="date">
-            <p class="m-1">{{singleTrip.data_start}}</p>
-            <p class="m-1">{{singleTrip.data_end}}</p>
+            <p class="m-1">Starts: {{singleTrip.data_start}}</p>
+            <p class="m-1">Ends: {{singleTrip.data_end}}</p>
           </div>
           <h6>Description</h6>
           <p>{{singleTrip.description}}</p>
         </div>
       </div>
     </div>
-    <div class="card_places m-1" style="margin-top: 5%; width: 30%" *ngIf="singleTrip.selected_places < singleTrip.max_places"
+    <div class="card_places m-1" style="margin-top: 5%; width: 30%"
+         *ngIf="singleTrip.selected_places < singleTrip.max_places"
          [ngStyle]="{
     'background-color': (singleTrip.selected_places >= 10) ? '#f0a541' : '#f3d5ac'
     }

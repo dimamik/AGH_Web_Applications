@@ -9,6 +9,7 @@ export class Trip {
     public max_places: number = 5,
     public link_img: string = 'assets/logo.gif',
     public selected_places: number = 0,
+    public rating: number = 5
   ) {
   }
 }

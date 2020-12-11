@@ -1,8 +1,38 @@
-<div class="row w-100">
+<!--Can be put in a component, but in this case I considered it unnecessary (One component -> one thing to do)-->
+<div class="d-block col-12 col-md-8 col-lg-6 p-1 m-1" style="background-color: #ddddb2">
+  <h3 class="text-center">Filter trips</h3>
+  <div class="form-group w-75">
+    <label for="country" class="d-block">Country:</label>
+    <input type="text" id="country" class="form-control" [(ngModel)]="countryNameFilter" placeholder="Country name">
+  </div>
 
-  <app-single-trip *ngFor="let item of items; let i = index;" [singleTrip]="item"
+  <div class="form-group w-100">
+    <label for="price_starting" class="d-block">Prices from to:</label>
+    <input type="number" id="price_starting" [(ngModel)]="price_starting" placeholder="Price Starting value">
+    <input type="number" [(ngModel)]="price_ending" placeholder="Price Ending value">
+  </div>
+
+  <div class="form-group w-100">
+    <label for="data_start" class="d-block">Dates starts and ends:</label>
+    <input class="form-control w-50 d-inline-block" type="date" id="data_start" [(ngModel)]="data_start"
+           placeholder="Date starting">
+    <input type="date" class="form-control w-50 d-inline-block" [(ngModel)]="data_end" placeholder="Date ending">
+  </div>
+
+  <div class="form-group w-100">
+    <label for="rating" class="d-block">Rating:</label>
+    <input type="number" id="rating" [(ngModel)]="rating" placeholder="Rating more than">
+  </div>
+
+  <button type="submit" class="btn btn-success m-1 d-block" (click)="resetFilter()">Reset</button>
+</div>
+
+<div class="row w-100">
+  <app-single-trip *ngFor="let item of (items | filterPipe:
+  countryNameFilter : price_starting : price_ending : data_start : data_end : rating)
+   " [singleTrip]="item"
                    class="card col-12 col-sm-6 col-md-4 col-xl-3 m-0 p-2 border-0"
-                   [cheaper]="getCheapest()" [highest]="getHighest()"
+                   [cheaper]="getCheapest()" [highest]="getHighest()" (deleteSelected)="deleteTrip($event)"
   >
   </app-single-trip>
 </div>
