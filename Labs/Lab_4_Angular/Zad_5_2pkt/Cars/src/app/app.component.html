@@ -1,0 +1,17 @@
+<select [(ngModel)]="markaSelection" (ngModelChange)="markaSelected()">
+  <option *ngFor="let marka of marki; let i = index" [value]="i">
+    {{marka.name}}
+  </option>
+</select>
+
+<select *ngIf="markaSelection" [(ngModel)]="modelSelection" (ngModelChange)="modelSelected()">
+  <option *ngFor="let model of this.marki[markaSelection].models; let i = index" [value]="i">
+    {{model.name}}
+  </option>
+</select>
+
+<select *ngIf="modelSelection" [(ngModel)]="colorSelection">
+  <option *ngFor="let color of this.marki[markaSelection].models[modelSelection].colors" >
+    {{color}}
+  </option>
+</select>

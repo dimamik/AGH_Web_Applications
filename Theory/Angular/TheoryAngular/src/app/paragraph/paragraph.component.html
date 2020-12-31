@@ -1,32 +1,39 @@
 <h1>There are 4 types of data binding in Angular</h1>
 <ol>
-    <li>
-        <h2>First one: Event Binding
-        </h2>
-        <p>My name is {{name}}</p>
-        <button (click)="updateName()">Update button</button>
-    </li>
-    <li>
-        <h2>Second one: Two-way data binding
-        </h2>
-        <p>Two-way binding is a mechanism where data flows both ways from the component to the view and back. The component and view are always in sync, and changes made on either end are immediately updated both ways. Two-way binding is commonly used when
-            dealing with forms where the user input is used to update the component’s state and vice versa.</p>
-        Enter the value : <input [(ngModel)]='val'>
-        <br> Entered value is: {{val}}
-    </li>
-    <li>
-        <h2>Third one: Interpolation
-        </h2>
-        <p>This data binding mechanism will be spoken about in detail in this article. In the technique, text representing variables in components are placed in between double curly braces in the template. Angular finds the variable matching the text in
-            the component and replaces the text with the value assigned to the variable. Numbers, strings, etc. can be used directly between the curly braces.</p>
-        <p>{{ name }}</p>
-    </li>
-    <li>
-        <h2>Last one is Property binding</h2>
-        <p>Property binding is a one-way mechanism that lets you set the property of a view element. It involves updating the value of a property in the component and binding it to an element in the view template. Property binding uses the [] syntax for
-            data binding. An example is setting the disabled state of a button.</p>
-        <button [disabled]="buttonDisabled">Button text</button>
-    </li>
+  <li>
+    <h2>First one: Event Binding
+    </h2>
+    <p>My name is {{name}}</p>
+    <button (click)="updateName()">Update button</button>
+  </li>
+  <li>
+    <h2>Second one: Two-way data binding
+    </h2>
+    <p>Two-way binding is a mechanism where data flows both ways from the component to the view and back. The component
+      and view are always in sync, and changes made on either end are immediately updated both ways. Two-way binding is
+      commonly used when
+      dealing with forms where the user input is used to update the component’s state and vice versa.</p>
+    Enter the value : <input [(ngModel)]='val'>
+    <br> Entered value is: {{val}}
+  </li>
+  <li>
+    <h2>Third one: Interpolation
+    </h2>
+    <p>This data binding mechanism will be spoken about in detail in this article. In the technique, text representing
+      variables in components are placed in between double curly braces in the template. Angular finds the variable
+      matching the text in
+      the component and replaces the text with the value assigned to the variable. Numbers, strings, etc. can be used
+      directly between the curly braces.</p>
+    <p>{{ name }}</p>
+  </li>
+  <li>
+    <h2>Last one is Property binding</h2>
+    <p>Property binding is a one-way mechanism that lets you set the property of a view element. It involves updating
+      the value of a property in the component and binding it to an element in the view template. Property binding uses
+      the [] syntax for
+      data binding. An example is setting the disabled state of a button.</p>
+    <button [disabled]="buttonDisabled">Button text</button>
+  </li>
 </ol>
 
 <h1>Time for experiments:</h1>
@@ -34,13 +41,13 @@
 <p> {{beverageInput.value}} </p>
 
 <select #beverageInput (input)="0">
-    <option value="milo">Milo</option>
-    <option value="coke">Coke</option>
-    <option value="fanta">Fanta</option>
-  </select>
+  <option value="milo">Milo</option>
+  <option value="coke">Coke</option>
+  <option value="fanta">Fanta</option>
+</select>
 
 <h2>Properties binding x2</h2>
-<img [alt]="animal.name" [src]="animal.image" />
+<img [alt]="animal.name" [src]="animal.image"/>
 <!-- The same but in other syntax -->
 <!-- <img bind-alt="animal.name" bind-src="animal.image" -->
 
@@ -49,8 +56,8 @@
 
 <h1>Another way of styling in angular</h1>
 <h1 [ngStyle]="styles">It's valentines </h1>
-<!-- 
-    in component: 
+<!--
+    in component:
 
     styles = {
         color: 'indianred',
@@ -62,8 +69,14 @@
 <h1>Conclusion: </h1>
 <p> When using property binding, it is important to remember the following guidelines:</p>
 <ol>
-    <h3>Avoid side effects: </h3>
-    <li> Avoid expressions that tend to cause unknown side effects. Stick to using data properties and methods/functions that have return value. The increment and decrement operators can’t be used here and variables can’t be assigned.</li>
-    <li> Bind the proper type: When using property binding, if the attribute being bound expects a string, ensure the type of the value being passed to it is a string to avoid unknown issues.</li>
-    <li> Use brackets: When binding properties, the square bracket is always expected, and omitting it will lead to Angular treating it like a regular element property and the expression won’t be evaluated</li>
+  <h3>Avoid side effects: </h3>
+  <li> Avoid expressions that tend to cause unknown side effects. Stick to using data properties and methods/functions
+    that have return value. The increment and decrement operators can’t be used here and variables can’t be assigned.
+  </li>
+  <li> Bind the proper type: When using property binding, if the attribute being bound expects a string, ensure the type
+    of the value being passed to it is a string to avoid unknown issues.
+  </li>
+  <li> Use brackets: When binding properties, the square bracket is always expected, and omitting it will lead to
+    Angular treating it like a regular element property and the expression won’t be evaluated
+  </li>
 </ol>

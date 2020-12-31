@@ -1,0 +1,23 @@
+<select [(ngModel)]="MarkChoosen">
+  <option *ngFor="let mark of Cars; let i=index" [value] = i>
+    {{mark.name}}
+  </option>
+</select>
+
+<select *ngIf="MarkChoosen" [(ngModel)]="ModelChoosen">
+  <option *ngFor="let model of Cars[MarkChoosen].models; let i = index" [value] = i>
+    {{model.name}}
+  </option>
+</select>
+
+<select *ngIf="ModelChoosen" [(ngModel)]="ColorChoosen">
+  <option *ngFor="let color of Cars[MarkChoosen].models[ModelChoosen].color; let i = index" [value] = i>
+    {{color}}
+  </option>
+</select>
+
+<div *ngIf="ColorChoosen">
+    <h1>Your choise is:</h1>
+    <h1>{{Cars[MarkChoosen].name}} + {{Cars[MarkChoosen].models[ModelChoosen].name}} + {{Cars[MarkChoosen].models[ModelChoosen].color[ColorChoosen]}}
+    </h1>
+</div>

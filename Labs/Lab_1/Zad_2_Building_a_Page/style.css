@@ -17,7 +17,6 @@ body {
 .logo {
     grid-area: logo;
 }
-
 .header {
     grid-area: header;
 }

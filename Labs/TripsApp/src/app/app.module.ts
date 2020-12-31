@@ -12,9 +12,9 @@ import {SelectedSingleTripComponent} from './selected-trips/selected-single-trip
 import {DataValidator} from './form-trip/data-validator';
 import { RatingTripsComponent } from './trips-menu/rating-trips/rating-trips.component';
 import {FilterPipe} from './trips-menu/list-of-trips/filter-pipe';
-
-
-
+import { AngularFireModule } from "@angular/fire";
+import { environment } from '../environments/environment';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 
 @NgModule({
@@ -35,6 +35,8 @@ import {FilterPipe} from './trips-menu/list-of-trips/filter-pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

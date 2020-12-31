@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {TripsList} from '../../trips-list-data/trips-list';
+import {AngularFireDatabase} from '@angular/fire/database';
 
 @Component({
   selector: 'app-single-trip',
@@ -15,6 +16,11 @@ export class SingleTripComponent implements OnInit {
   @Input() highest;
   @Input() cheaper;
   @Output() deleteSelected = new EventEmitter<number>();
+
+  constructor(private db: AngularFireDatabase) {
+  }
+  const
+  daneRef = this.db.object('tripsapp-32cce-default-rtdb');
 
   ngOnInit(): void {
     this.currentRate = this.singleTrip.rating;

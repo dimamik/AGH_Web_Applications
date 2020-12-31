@@ -1,0 +1,44 @@
+body {
+    font: 62.5% Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+a {
+    background-color: blueviolet;
+    display: block;
+    margin-bottom: 5px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+a:hover {
+    background-color: rgb(188, 142, 231);
+}
+
+a:active {
+    background-color: cyan;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#first {
+    border-left: 2px solid black;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-self: center;
+}
