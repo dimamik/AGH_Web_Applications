@@ -1,8 +1,24 @@
-<app-form-trip class="col-md-6 col-12 d-inline-block" (tripAdded)="addToListOfTrips($event)">
-</app-form-trip>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">TripsApp</a>
+  <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<app-selected-trips-list class="col-12 col-md-6 d-inline-block float-md-right" style="margin-top: 1%;">
-</app-selected-trips-list>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="trips">Trips <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="selected">Selected Trips</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="add">Add TripModel</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<app-list-of-trips>
-</app-list-of-trips>
+<router-outlet></router-outlet>

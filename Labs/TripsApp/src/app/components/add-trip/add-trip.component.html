@@ -1,0 +1,92 @@
+<div class="container">
+  <div>
+    <h1>Add new trip</h1>
+    <form [formGroup]="myForm"
+          novalidate
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" formControlName="name_of_trip" id="name"
+               required
+               type="text">
+        <div *ngIf="name_of_trip.errors && (name_of_trip.dirty || name_of_trip.touched)"
+             class="alert-danger alert"
+        >
+          Name is required and should be longer than 3 characters
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Country</label>
+        <input class="form-control" formControlName="country" id="country"
+               required
+               type="text">
+        <div *ngIf="country.errors && (country.dirty || country.touched)"
+             class="alert-danger alert"
+        >
+          Country is required and should be longer than 3 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Date Starting</label>
+        <input class="form-control" formControlName="data_start" id="data_start"
+               required
+               type="date">
+        <div *ngIf="data_start.errors && (data_start.dirty || data_start.touched)"
+             class="alert-danger alert"
+        >
+          Date of start is required and should be in the future
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Date Ending</label>
+        <input class="form-control" formControlName="data_end" id="data_end"
+               required
+
+               type="date">
+        <div *ngIf="data_end.errors && (data_end.dirty || data_end.touched)"
+             class="alert-danger alert"
+        >
+          Date end is required and should start in the future
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Price</label>
+        <input class="form-control" formControlName="price" id="price"
+               required
+               type="number">
+        <div *ngIf="price.errors && (price.dirty || price.touched)"
+             class="alert-danger alert"
+        >
+          Price is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Maximum places</label>
+        <input class="form-control" formControlName="max_places" id="max_places"
+               required
+               type="number">
+        <div *ngIf="max_places.errors && (max_places.dirty || max_places.touched)"
+             class="alert-danger alert"
+        >
+          Max Places is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Short Description</label>
+        <input class="form-control" formControlName="description" id="description"
+               type="text">
+        <div *ngIf="description.errors && (description.dirty || description.touched)"
+             class="alert-danger alert"
+        >
+          Description can't be longer than 30 characters
+        </div>
+      </div>
+      <button (click)="addNewTrip()" [disabled]="!myForm.valid" class="btn btn-success m-1" type="submit">Submit
+      </button>
+    </form>
+  </div>
+</div>

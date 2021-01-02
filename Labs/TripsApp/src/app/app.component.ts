@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-import {TripsList} from './trips-list-data/trips-list';
-import {Trip} from './trips-list-data/trip';
 
 
 @Component({
@@ -10,11 +8,5 @@ import {Trip} from './trips-list-data/trip';
 })
 export class AppComponent {
   title = 'TripsApp';
-
-  tripList = TripsList.trips;
-
-  addToListOfTrips(tripToAdd: Trip) {
-    this.tripList.push(tripToAdd);
-  }
 }
 

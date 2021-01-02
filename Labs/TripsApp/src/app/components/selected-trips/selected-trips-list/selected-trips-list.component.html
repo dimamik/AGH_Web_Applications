@@ -1,0 +1,8 @@
+<div style="background-color: beige;">
+  <h3 class="text-center" style="background-color: beige">List of selected trips: </h3>
+  <div *ngFor="let item of tripsList;" class="col-sm-12">
+    <app-selected-single-trip *ngIf="item.selected_places>0" [itemSelected]=item>
+    </app-selected-single-trip>
+  </div>
+  <h3 class="text-right w-100" style="background-color: beige">Total price: {{getTotalSum() | currency:'USD':'$' }}</h3>
+</div>

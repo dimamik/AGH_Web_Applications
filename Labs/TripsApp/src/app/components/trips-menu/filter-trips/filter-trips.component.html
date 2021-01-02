@@ -1,0 +1,32 @@
+<div class="d-block col-12 col-md-8 col-lg-6 p-1 m-1" style="background-color: #ddddb2">
+  <h3 class="text-center">Filter trips</h3>
+  <div class="form-group w-75">
+    <label class="d-block" for="country">Country:</label>
+    <input [(ngModel)]="filterModel.countryNameFilter" class="form-control" id="country"
+           placeholder="Country name to be included"
+           type="text">
+  </div>
+
+  <div class="form-group w-100">
+    <label class="d-block" for="price_starting">Prices from to:</label>
+    <input [(ngModel)]="filterModel.price_starting" id="price_starting" placeholder="Price Starting value"
+           type="number">
+    <input [(ngModel)]="filterModel.price_ending" placeholder="Price Ending value" type="number">
+  </div>
+
+  <div class="form-group w-100">
+    <label class="d-block" for="data_start">Dates starts and ends:</label>
+    <input [(ngModel)]="filterModel.data_start" class="form-control w-50 d-inline-block" id="data_start"
+           placeholder="Date starting"
+           type="date">
+    <input [(ngModel)]="filterModel.data_end" class="form-control w-50 d-inline-block" placeholder="Date ending"
+           type="date">
+  </div>
+
+  <div class="form-group w-100">
+    <label class="d-block" for="rating">Rating:</label>
+    <input [(ngModel)]="filterModel.rating" id="rating" placeholder="Rating more than" type="number">
+  </div>
+  <button (click)="submitFilter()" class="btn btn-success m-1 d-inline-block" type="submit">Submit</button>
+  <button (click)="resetFilter()" class="btn btn-success m-1 d-inline-block" type="submit">Reset</button>
+</div>

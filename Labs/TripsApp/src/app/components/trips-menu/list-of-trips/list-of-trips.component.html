@@ -1,0 +1,15 @@
+<button (click)="showFilter()" class="btn-check active" id="showFilters">Show Filters</button>
+
+<app-filter-trips (newItemEvent)="addItem($event)" *ngIf="isFilterShowing">
+
+</app-filter-trips>
+<div class="row w-100">
+  <app-single-trip (deleteSelected)="deleteTrip($event)" *ngFor="let item of (tripsList | filterPipe:
+  filterModel.countryNameFilter : filterModel.price_starting : filterModel.price_ending : filterModel.data_start : filterModel.data_end : filterModel.rating)
+   "
+                   [singleTrip]="item"
+                   class="card col-12 col-sm-6 col-md-4 col-xl-3 m-0 p-2 border-0"
+  >
+  </app-single-trip>
+</div>
+

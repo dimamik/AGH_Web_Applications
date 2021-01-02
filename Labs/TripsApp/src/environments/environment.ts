@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
+  firebaseConfig: {
     apiKey: 'AIzaSyA-2O_CE4An-mXyeFuMXT1d2yL53sOaPfU',
     authDomain: 'tripsapp-32cce.firebaseapp.com',
     projectId: 'tripsapp-32cce',

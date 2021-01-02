@@ -1,0 +1,18 @@
+<h1 class="text-center">Photos</h1>
+
+<nav class="d-block" style="height: 50px">
+  <button (click)="turnPrev()" class="float-left d-inline-block">Previous</button>
+  <button (click)="turnNext()" class="d-inline-block float-right">Next</button>
+</nav>
+<div *ngFor="let photo of getPhotosToShow()  let i=index; "
+     class="d-inline-block col-12 col-sm-6 col-md-4 col-xl-3 m-0 p-2 border-0"
+>
+  <div>
+    <h5 class="text-center">{{photo.title}}</h5>
+    <img alt="" class="img-fluid rounded-circle" src="{{photo.url}}">
+  </div>
+</div>
+<nav class="d-block" style="height: 50px">
+  <button (click)="turnPrev()" class="float-left d-inline-block">Previous</button>
+  <button (click)="turnNext()" class="d-inline-block float-right">Next</button>
+</nav>
