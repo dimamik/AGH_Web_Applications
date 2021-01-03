@@ -35,7 +35,7 @@
         <div *ngIf="data_start.errors && (data_start.dirty || data_start.touched)"
              class="alert-danger alert"
         >
-          Date of start is required and should be in the future
+          Date of trip start is required and should be in the future
         </div>
       </div>
 
@@ -45,10 +45,15 @@
                required
 
                type="date">
-        <div *ngIf="data_end.errors && (data_end.dirty || data_end.touched)"
+        <div [hidden]="!myForm.hasError('endDateLessThanStartDate')"
              class="alert-danger alert"
         >
-          Date end is required and should start in the future
+          Date of trip should be after date of start
+        </div>
+        <div *ngIf="((data_end.errors && (data_end.dirty || data_end.touched)))"
+             class="alert-danger alert"
+        >
+          Date of trip ending is required
         </div>
       </div>
 

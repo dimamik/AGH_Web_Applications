@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {TripModel} from '../../models/trip-model';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {DataValidator} from './data-validator';
+import {IsDataInFutureValidator} from './is-data-in-future-validator.directive';
 import {GetTripsListService} from '../../services/get-trips-list.service';
 import {GetMinMaxPricedTripsService} from '../../services/get-min-max-priced-trips.service';
 
@@ -22,11 +22,13 @@ export class AddTripComponent implements OnInit {
   description: FormControl;
   myForm: FormGroup;
 
+
   @Output() tripAdded = new EventEmitter<TripModel>();
 
   constructor(
     public minMaxService: GetMinMaxPricedTripsService,
-    private tripsService: GetTripsListService) {
+    private tripsService: GetTripsListService
+  ) {
   }
 
   ngOnInit(): void {
@@ -47,12 +49,12 @@ export class AddTripComponent implements OnInit {
     ]);
     this.data_start = new FormControl('', [
       Validators.required,
-      new DataValidator().validate
+      new IsDataInFutureValidator().validate
 
     ]);
     this.data_end = new FormControl('', [
       Validators.required,
-      new DataValidator().validate
+      new IsDataInFutureValidator().validate
     ]);
     this.price = new FormControl('', [
       Validators.required,
@@ -76,7 +78,7 @@ export class AddTripComponent implements OnInit {
       price: this.price,
       max_places: this.max_places,
       description: this.description
-    });
+    }, {validators: this.endDateAfterOrEqualValidator});
   }
 
 
@@ -98,4 +100,18 @@ export class AddTripComponent implements OnInit {
     this.myForm.reset();
     this.minMaxService.addNewPrice(key, Number(trip.price));
   }
+
+  endDateAfterOrEqualValidator(formGroup): any {
+    let startDateTimestamp, endDateTimestamp;
+    for (const controlName in formGroup.controls) {
+      if (controlName.indexOf('data_start') !== -1) {
+        startDateTimestamp = Date.parse(formGroup.controls[controlName].value);
+      }
+      if (controlName.indexOf('data_end') !== -1) {
+        endDateTimestamp = Date.parse(formGroup.controls[controlName].value);
+      }
+    }
+    return (endDateTimestamp < startDateTimestamp) ? {endDateLessThanStartDate: true} : null;
+  }
+
 }

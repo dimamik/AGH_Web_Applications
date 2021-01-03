@@ -9,7 +9,7 @@ import {AddTripComponent} from './components/add-trip/add-trip.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SelectedTripsListComponent} from './components/selected-trips/selected-trips-list/selected-trips-list.component';
 import {SelectedSingleTripComponent} from './components/selected-trips/selected-single-trip/selected-single-trip.component';
-import {DataValidator} from './components/add-trip/data-validator';
+import {IsDataInFutureValidator} from './components/add-trip/is-data-in-future-validator.directive';
 import {RatingTripsComponent} from './components/trips-menu/rating-trips/rating-trips.component';
 import {FilterPipe} from './components/trips-menu/filter-trips/filter-pipe';
 import {AngularFireModule} from '@angular/fire';
@@ -29,14 +29,13 @@ import {NavigationBarComponent} from './components/navigation-bar/navigation-bar
     AddTripComponent,
     SelectedTripsListComponent,
     SelectedSingleTripComponent,
-    DataValidator,
+    IsDataInFutureValidator,
     RatingTripsComponent,
     FilterPipe,
     PageNotFoundComponent,
     FilterTripsComponent,
     TripDetailsComponent,
     NavigationBarComponent
-
   ],
   imports: [
     BrowserModule,

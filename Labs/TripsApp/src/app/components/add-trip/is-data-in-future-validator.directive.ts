@@ -6,9 +6,9 @@ import {FormControl, NG_VALIDATORS, Validator} from '@angular/forms';
  */
 @Directive({
   selector: '[appForbiddenDate]',
-  providers: [{provide: NG_VALIDATORS, useExisting: DataValidator, multi: true}]
+  providers: [{provide: NG_VALIDATORS, useExisting: IsDataInFutureValidator, multi: true}]
 })
-export class DataValidator implements Validator {
+export class IsDataInFutureValidator implements Validator {
   validate(control: FormControl) {
 
     let date = new Date(control.value);
