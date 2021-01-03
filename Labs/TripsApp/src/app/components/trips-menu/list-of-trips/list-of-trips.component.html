@@ -4,7 +4,7 @@
 
 </app-filter-trips>
 <div class="row w-100">
-  <app-single-trip (deleteSelected)="deleteTrip($event)" *ngFor="let item of (tripsList | filterPipe:
+  <app-single-trip *ngFor="let item of (tripsList | filterPipe:
   filterModel.countryNameFilter : filterModel.price_starting : filterModel.price_ending : filterModel.data_start : filterModel.data_end : filterModel.rating)
    "
                    [singleTrip]="item"

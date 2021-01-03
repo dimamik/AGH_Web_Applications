@@ -82,7 +82,7 @@
         <div *ngIf="description.errors && (description.dirty || description.touched)"
              class="alert-danger alert"
         >
-          Description can't be longer than 30 characters
+          Description can't be longer than 300 characters
         </div>
       </div>
       <button (click)="addNewTrip()" [disabled]="!myForm.valid" class="btn btn-success m-1" type="submit">Submit

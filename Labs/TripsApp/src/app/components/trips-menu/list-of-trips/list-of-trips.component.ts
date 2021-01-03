@@ -17,7 +17,7 @@ export class ListOfTripsComponent implements OnInit {
 
   constructor(
     public tripsService: GetTripsListService,
-    public minMaxService: GetMinMaxPricedTripsService
+    public minMaxService: GetMinMaxPricedTripsService,
   ) {
     this.filterModel = new FilterModel();
 
@@ -36,13 +36,14 @@ export class ListOfTripsComponent implements OnInit {
     this.filterModel = filterModel;
   }
 
-
-  deleteTrip(params) {
-    this.tripsList.splice(params, 1);
-  }
+  //
+  // deleteTrip(params) {
+  //   // this.tripsList.splice(params, 1);
+  // }
 
 
   showFilter() {
     this.isFilterShowing = !this.isFilterShowing;
   }
+
 }

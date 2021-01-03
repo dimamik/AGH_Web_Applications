@@ -4,10 +4,12 @@ import {ListOfTripsComponent} from '../components/trips-menu/list-of-trips/list-
 import {SelectedTripsListComponent} from '../components/selected-trips/selected-trips-list/selected-trips-list.component';
 import {PageNotFoundComponent} from '../components/page-not-found/page-not-found.component';
 import {AddTripComponent} from '../components/add-trip/add-trip.component';
+import {TripDetailsComponent} from '../components/trip-details/trip-details.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'trips', pathMatch: 'full'},
   {path: 'trips', component: ListOfTripsComponent},
+  {path: 'trips/:key', component: TripDetailsComponent},
   {path: 'selected', component: SelectedTripsListComponent},
   {path: 'add', component: AddTripComponent},
   {path: '**', component: PageNotFoundComponent}

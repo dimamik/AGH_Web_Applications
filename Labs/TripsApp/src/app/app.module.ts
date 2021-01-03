@@ -18,7 +18,8 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {FilterTripsComponent} from './components/trips-menu/filter-trips/filter-trips.component';
 import {GetTripsListService} from './services/get-trips-list.service';
-
+import {TripDetailsComponent} from './components/trip-details/trip-details.component';
+import {NavigationBarComponent} from './components/navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import {GetTripsListService} from './services/get-trips-list.service';
     RatingTripsComponent,
     FilterPipe,
     PageNotFoundComponent,
-    FilterTripsComponent
+    FilterTripsComponent,
+    TripDetailsComponent,
+    NavigationBarComponent
 
   ],
   imports: [

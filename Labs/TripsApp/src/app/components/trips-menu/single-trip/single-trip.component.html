@@ -4,13 +4,11 @@
   'background-color': (singleTrip.max_places - singleTrip.selected_places < 3) ? 'darkgoldenrod' : 'antiquewhite',
    'color': (singleTrip.max_places - singleTrip.selected_places < 3) ? 'white' : 'black'
       }
-"
 
-  style="padding-left: 5%">
+"
+  style="padding-left: 5%; border-radius: 5%">
   <div class="card_head">
     <h3 class="card_name text-center">{{singleTrip.name | uppercase}}</h3>
-    <app-rating-trips (ratingSelected)="setRating($event)" [selectedRating]="currentRate">
-    </app-rating-trips>
   </div>
   <div class="card_main ">
     <div class="img_and_description ">
@@ -24,8 +22,6 @@
             <p class="m-1">Starts: {{singleTrip.data_start}}</p>
             <p class="m-1">Ends: {{singleTrip.data_end}}</p>
           </div>
-          <h6>Description</h6>
-          <p>{{singleTrip.description}}</p>
         </div>
       </div>
     </div>
@@ -34,34 +30,41 @@
     }
     "
          class="card_places m-1"
-         style="margin-top: 5%; width: 30%"
+         style="margin-top: 5%; width: 35%"
     >
-      <p>Places: {{singleTrip.max_places - singleTrip.selected_places}}/{{singleTrip.max_places}}</p>
+      <p style="font-size: large; font-weight: bold">Places: {{singleTrip.max_places - singleTrip.selected_places}}
+        /{{singleTrip.max_places}}</p>
     </div>
     <div *ngIf="singleTrip.selected_places== singleTrip.max_places" class="no_more_places m-3 ">
-      <p style="color: #ff0000"> No places left</p>
+      <p style="color: black; font-size: x-large"> No places left</p>
     </div>
   </div>
   <div class="card_footer m-0 w-100 position-relative">
 
     <h4 [ngStyle]=" isMin() && {'background-color' : 'green'} || isMax()  && {'background-color' : 'red'}  "
 
-        class="card_price m-0 d-inline-block center-block "
+        class="card_price m-0 d-inline-block center-block mt-2 text-center p-0"
 
-        style="width: 40%; position: relative; bottom: 0;">{{singleTrip.price | currency:'USD':'$'}}</h4>
+        style="width: 40%; position: relative; bottom: 0; border-radius: 5%;">{{singleTrip.price | currency:'USD':'$'}}</h4>
 
     <div class="card_buttons float-right " style="width: 60%">
-      <div (click)="deleteClicked()" *ngIf="singleTrip.selected_places > 0"
-           class="icon w-25 d-inline-block m-1 float-right">
+
+      <div (click)="decreaseTripsTakenCounter()" *ngIf="showDecreaseButton"
+           class="icon  d-inline-block m-1 float-right" style="width: 20%">
         <img alt="" src="../../../../assets/minus_icon.png" style="cursor: pointer" width="100%">
       </div>
-      <div (click)="addClicked()" *ngIf="isNotFull" class="icon w-25 d-inline-block m-1 float-right">
+      <div (click)="increaseTripsTakenCounter()" *ngIf="showIncreaseButton"
+           class="icon  d-inline-block m-1 float-right" style="width: 20%">
         <img alt="" src="../../../../assets/add_icon.png" style="cursor: pointer" width="100%">
       </div>
-      <div (click)="deleteTripClicked()" class="icon w-25 d-inline-block m-1 float-right">
+      <div (click)="deleteTripClicked()"
+           class="icon d-inline-block m-1 float-right" style="width: 20%">
         <img alt="" src="../../../../assets/trash_icon.webp" style="cursor: pointer" width="100%">
+      </div>
+      <div (click)="goToTripDetails()"
+           class="icon  d-inline-block m-1 float-right" style="width: 20%">
+        <img alt="" src="../../../../assets/details.png" style="cursor: pointer" width="100%">
       </div>
     </div>
   </div>
 </div>
-

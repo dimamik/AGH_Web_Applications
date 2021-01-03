@@ -1,0 +1,47 @@
+<div style="background-color:antiquewhite">
+  <h1 class="text-center">{{singleTrip.name }}</h1>
+  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Destination
+    country: </p> {{singleTrip.country }}</h2>
+  <img alt="" class="rounded-circle" src="../../../assets/logo.gif" style=" display: block;
+    margin-left: auto;
+    margin-right: auto">
+  <!--  Date-->
+  <h2 class="text-center "><p style="text-decoration: underline; display: inline-block">Date of trip: </p> <br>
+    <p style="text-decoration: underline; display: inline-block">From:</p> {{singleTrip.data_start }} <br>
+    <p style="text-decoration: underline; display: inline-block">To:</p> {{singleTrip.data_end}}</h2>
+  <!--Description-->
+  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Description:</p></h2>
+  <h5 class="text-center ">{{singleTrip.description }}</h5>
+  <!--  Places-->
+  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">
+    Places:</p> {{singleTrip.max_places - singleTrip.selected_places }} / {{singleTrip.max_places}}</h2>
+  <div *ngIf="singleTrip.selected_places == singleTrip.max_places" class="no_more_places m-3 text-center">
+    <p style="color: red; font-size: xx-large"> No places left</p>
+  </div>
+  <!--  Price-->
+  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Price:</p> {{singleTrip.price}} $
+  </h2>
+  <!--  Rating-->
+  <div style="width: 100%">
+    <app-rating-trips (ratingSelected)="setRating($event)"
+                      [selectedRating]="singleTrip.rating"
+                      style="display:block; margin-left: auto; margin-right: auto; width: fit-content">
+    </app-rating-trips>
+  </div>
+  <!--  Buttons-->
+  <div class="card_buttons text-center" style="width: 100%; height: 20vw; padding-top: 1%; padding-bottom: 25%">
+
+    <div (click)="deleteTripClicked()"
+         class="d-inline-block m-1 ">
+      <img alt="" src="../../../assets/trash_icon.webp" style="cursor: pointer" width="75vw">
+    </div>
+    <div (click)="increaseTripsTakenCounter()" *ngIf="showIncreaseButton"
+         class=" d-inline-block m-1 ">
+      <img alt="" src="../../../assets/add_icon.png" style="cursor: pointer" width="75vw">
+    </div>
+    <div (click)="decreaseTripsTakenCounter()" *ngIf="showDecreaseButton"
+         class="d-inline-block m-1 ">
+      <img alt="" src="../../../assets/minus_icon.png" style="cursor: pointer" width="75vw">
+    </div>
+  </div>
+</div>

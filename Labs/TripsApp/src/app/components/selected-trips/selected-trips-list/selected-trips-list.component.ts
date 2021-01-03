@@ -22,6 +22,10 @@ export class SelectedTripsListComponent implements OnInit {
 
   getTotalSum() {
     let sum: number = 0;
+    if (this.tripsList == undefined) {
+      return sum;
+    }
+
     for (let item of this.tripsList) {
       if (item.selected_places > 0) {
         sum += item.selected_places * (+item.price);

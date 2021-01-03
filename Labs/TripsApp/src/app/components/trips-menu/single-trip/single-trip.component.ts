@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GetTripsListService} from '../../../services/get-trips-list.service';
 import {TripModel} from '../../../models/trip-model';
 import {GetMinMaxPricedTripsService} from '../../../services/get-min-max-priced-trips.service';
+import {Router} from '@angular/router';
+import {TripModifierService} from '../../../services/trip-modifier.service';
 
 @Component({
   selector: 'app-single-trip',
@@ -9,17 +11,21 @@ import {GetMinMaxPricedTripsService} from '../../../services/get-min-max-priced-
   styleUrls: ['./single-trip.component.css']
 })
 export class SingleTripComponent implements OnInit {
-  isNotFull = true;
-  isAddedAny = false;
+
   currentRate: number;
+  showDecreaseButton = false;
+  showIncreaseButton = true;
   tripList: TripModel[];
   @Input() singleTrip;
+
   @Output() deleteSelected = new EventEmitter<number>();
   const;
 
   constructor(
     private tripsService: GetTripsListService,
-    public maxMinService: GetMinMaxPricedTripsService
+    public maxMinService: GetMinMaxPricedTripsService,
+    private router: Router,
+    private tripModifier: TripModifierService
   ) {
   }
 
@@ -28,36 +34,29 @@ export class SingleTripComponent implements OnInit {
     this.tripsService.getTripsList().subscribe(items => {
       this.tripList = items;
     });
-  }
-
-
-  deleteClicked() {
-    this.singleTrip.selected_places -= 1;
-    if (this.singleTrip.selected_places == 0) {
-      this.isAddedAny = false;
-    }
-    if (this.singleTrip.selected_places != this.singleTrip.max_places) {
-      this.isNotFull = true;
-    }
-    this.tripsService.updateTrip(this.singleTrip.key, this.singleTrip);
+    this.tripModifier.init();
+    this.showDecreaseButton = this.singleTrip.selected_places > 0;
+    this.showIncreaseButton = this.singleTrip.selected_places < this.singleTrip.max_places;
 
   }
 
-  addClicked() {
-    this.singleTrip.selected_places += 1;
-    this.isAddedAny = true;
-    if (this.singleTrip.selected_places == this.singleTrip.max_places) {
-      this.isNotFull = false;
-    }
-    this.tripsService.updateTrip(this.singleTrip.key, this.singleTrip);
+
+  decreaseTripsTakenCounter() {
+    this.showDecreaseButton = this.tripModifier.decreaseTripTakenPlaces(this.singleTrip);
+  }
+
+  increaseTripsTakenCounter() {
+    this.showIncreaseButton = this.tripModifier.increaseTripTakenPlaces(this.singleTrip);
   }
 
   deleteTripClicked() {
-    this.maxMinService.removePrice(this.singleTrip.key);
-    this.deleteSelected.emit(this.tripList.indexOf(this.singleTrip));
-    this.tripsService.deleteTrip(this.singleTrip.key);
-
+    this.tripModifier.deleteTrip(this.singleTrip);
   }
+
+  goToTripDetails() {
+    this.router.navigate(['/trips', this.singleTrip.key]);
+  }
+
 
   setRating(param) {
     this.singleTrip.rating = param;

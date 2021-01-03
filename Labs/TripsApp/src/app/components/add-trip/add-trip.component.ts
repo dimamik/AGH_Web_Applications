@@ -63,7 +63,7 @@ export class AddTripComponent implements OnInit {
 
     ]);
     this.description = new FormControl('', [
-      Validators.maxLength(30)
+      Validators.maxLength(300)
     ]);
   }
 
