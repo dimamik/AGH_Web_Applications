@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GetPostsService} from '../../../services/posts-service/get-posts.service';
-import {PostModel} from '../../../models/post.model';
+import {PostModel} from '../../../models/post-model';
 
 @Component({
   selector: 'app-posts',
@@ -24,7 +24,6 @@ export class PostsComponent implements OnInit {
         this.posts = posts;
       });
   }
-
 
   ngOnInit() {
   }

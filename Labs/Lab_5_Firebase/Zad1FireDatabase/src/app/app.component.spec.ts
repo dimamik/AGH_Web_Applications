@@ -20,6 +20,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
+  //Angular versions error (Project template was 8.3.21, mine is 10.2.0)
   it(`should have as title 'Zad1FireDatabase'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;

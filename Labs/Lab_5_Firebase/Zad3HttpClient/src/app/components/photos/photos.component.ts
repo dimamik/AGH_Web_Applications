@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GetPhotosService} from '../../services/photos-service/get-photos.service';
-import {PhotoModel} from '../../models/photo.model';
+import {PhotoModel} from '../../models/photo-model';
 
 
 @Component({
@@ -19,7 +19,6 @@ export class PhotosComponent implements OnInit {
     private photosService: GetPhotosService
   ) {
   }
-
 
   getListOfPhotos() {
     this.photosService.getPhotos()
@@ -44,6 +43,5 @@ export class PhotosComponent implements OnInit {
   getPhotosToShow() {
     return this.photos.slice(this.currentMax - this.imagesOnPage, this.currentMax);
   }
-
 
 }

@@ -10,7 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {GetPostsService} from './services/posts-service/get-posts.service';
 import {AddNewPostComponent} from './components/posts/add-post/add-new-post.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     PostsComponent,
     PhotosComponent,
     AddNewPostComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [

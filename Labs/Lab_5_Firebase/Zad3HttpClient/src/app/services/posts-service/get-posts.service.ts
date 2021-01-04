@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {PostModel} from '../../models/post.model';
+import {PostModel} from '../../models/post-model';
 
 const httpOptions = {
   headers: new HttpHeaders({
