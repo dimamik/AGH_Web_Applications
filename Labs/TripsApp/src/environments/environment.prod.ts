@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyA-2O_CE4An-mXyeFuMXT1d2yL53sOaPfU',
-    authDomain: 'tripsapp-32cce.firebaseapp.com',
-    projectId: 'tripsapp-32cce',
-    storageBucket: 'tripsapp-32cce.appspot.com',
-    messagingSenderId: '39236249644',
-    appId: '1:39236249644:web:eb7b3b4b7b4ce4668cc989',
-    measurementId: 'G-2JJGRDVQ07'
+    apiKey: "AIzaSyDsvdPVmbhoCpu-tn73a4IzfyBpyP0Vl78",
+    authDomain: "tripsappfinal.firebaseapp.com",
+    projectId: "tripsappfinal",
+    storageBucket: "tripsappfinal.appspot.com",
+    messagingSenderId: "106976303679",
+    appId: "1:106976303679:web:c8f8b1a449a75e5355768a",
+    measurementId: "G-7NZ5SGN088"
   }
 };

@@ -5,14 +5,19 @@ import {SelectedTripsListComponent} from '../components/selected-trips/selected-
 import {PageNotFoundComponent} from '../components/page-not-found/page-not-found.component';
 import {AddTripComponent} from '../components/add-trip/add-trip.component';
 import {TripDetailsComponent} from '../components/trip-details/trip-details.component';
+import {RegisterComponent} from '../authentication/register/register.component';
+import {SignInComponent} from '../authentication/sign-in/sign-in.component';
+import {AuthGuard} from '../guard/auth.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'trips', pathMatch: 'full'},
-  {path: 'trips', component: ListOfTripsComponent},
-  {path: 'trips/:key', component: TripDetailsComponent},
-  {path: 'selected', component: SelectedTripsListComponent},
-  {path: 'add', component: AddTripComponent},
-  {path: '**', component: PageNotFoundComponent}
+  {path: '', redirectTo: 'signIn', pathMatch: 'full'},
+  {path: 'trips', component: ListOfTripsComponent, canActivate: [AuthGuard]},
+  {path: 'trips/:key', component: TripDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'selected', component: SelectedTripsListComponent, canActivate: [AuthGuard]},
+  {path: 'add', component: AddTripComponent, canActivate: [AuthGuard]},
+  {path: 'signIn', component: SignInComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard]}
 
 ];
 
