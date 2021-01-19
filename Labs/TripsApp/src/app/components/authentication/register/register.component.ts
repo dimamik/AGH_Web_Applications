@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from '../../services/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from '../../../core/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +12,9 @@ export class RegisterComponent implements OnInit {
   User: any = ['Super Admin', 'Author', 'Reader'];
 
   constructor(
-    public authService:AuthenticationService
-
-  ) { }
+    public authService: AuthenticationService
+  ) {
+  }
 
   ngOnInit() {
   }

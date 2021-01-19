@@ -5,9 +5,9 @@ import {SelectedTripsListComponent} from '../components/selected-trips/selected-
 import {PageNotFoundComponent} from '../components/page-not-found/page-not-found.component';
 import {AddTripComponent} from '../components/add-trip/add-trip.component';
 import {TripDetailsComponent} from '../components/trip-details/trip-details.component';
-import {RegisterComponent} from '../authentication/register/register.component';
-import {SignInComponent} from '../authentication/sign-in/sign-in.component';
-import {AuthGuard} from '../guard/auth.guard';
+import {RegisterComponent} from '../components/authentication/register/register.component';
+import {SignInComponent} from '../components/authentication/sign-in/sign-in.component';
+import {AuthGuard} from '../core/guard/auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'signIn', pathMatch: 'full'},
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'add', component: AddTripComponent, canActivate: [AuthGuard]},
   {path: 'signIn', component: SignInComponent},
   {path: 'register', component: RegisterComponent},
-  {path: '**', component: PageNotFoundComponent, canActivate: [AuthGuard]}
+  {path: '**', component: PageNotFoundComponent}
 
 ];
 
@@ -26,4 +26,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
+
 }

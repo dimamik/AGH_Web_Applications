@@ -3,6 +3,7 @@ import {FilterModel} from '../../../models/filter-model';
 import {GetTripsListService} from '../../../services/get-trips-list.service';
 import {TripModel} from '../../../models/trip-model';
 import {GetMinMaxPricedTripsService} from '../../../services/get-min-max-priced-trips.service';
+import {RoleAccessService} from '../../../core/role-access.service';
 
 @Component({
   selector: 'app-list-of-trips',
@@ -18,6 +19,7 @@ export class ListOfTripsComponent implements OnInit {
   constructor(
     public tripsService: GetTripsListService,
     public minMaxService: GetMinMaxPricedTripsService,
+    public roleAccess: RoleAccessService
   ) {
     this.filterModel = new FilterModel();
 

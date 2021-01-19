@@ -20,10 +20,10 @@ import {FilterTripsComponent} from './components/trips-menu/filter-trips/filter-
 import {GetTripsListService} from './services/get-trips-list.service';
 import {TripDetailsComponent} from './components/trip-details/trip-details.component';
 import {NavigationBarComponent} from './components/navigation-bar/navigation-bar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularMaterialModule} from './material/material.module';
-import { SignInComponent } from './authentication/sign-in/sign-in.component';
-import { RegisterComponent } from './authentication/register/register.component';
+import {SignInComponent} from './components/authentication/sign-in/sign-in.component';
+import {RegisterComponent} from './components/authentication/register/register.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({

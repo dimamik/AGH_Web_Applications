@@ -8,18 +8,20 @@
     <form class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input type="text" matInput placeholder="Email" #mail required>
+          <input #mail matInput placeholder="Email" required type="text">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input type="password" matInput placeholder="Password" #password required>
+          <input #password matInput placeholder="Password" required type="password">
         </mat-form-field>
       </mat-card-content>
-      <button mat-stroked-button color="accent" class="btn-block" (click)="auth.SignIn(mail.value,password.value)">Sign-in</button>
+      <button (click)="auth.SignIn(mail.value,password.value)" class="btn-block" color="accent" mat-stroked-button>
+        Sign-in
+      </button>
 
     </form>
 
-    <mat-button-toggle mat-stroked-button color="primary" class="btn-block mt-4" routerLink="/register">
+    <mat-button-toggle class="btn-block mt-4" color="primary" mat-stroked-button routerLink="/register">
       Register
 
     </mat-button-toggle>

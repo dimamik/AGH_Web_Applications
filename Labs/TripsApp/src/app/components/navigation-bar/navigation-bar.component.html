@@ -17,8 +17,8 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="add">Add Trip</a>
       </li>
-      <li class="nav-item" *ngIf="auth.authState$">
-        <a class="nav-link" routerLink="signIn"(click)="auth.logOut()">Log Out</a>
+      <li *ngIf="auth.authenticated" class="nav-item">
+        <a (click)="auth.logOut()" class="nav-link" routerLink="signIn">Log Out</a>
       </li>
     </ul>
   </div>
