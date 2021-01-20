@@ -25,6 +25,9 @@ import {AngularMaterialModule} from './material/material.module';
 import {SignInComponent} from './components/authentication/sign-in/sign-in.component';
 import {RegisterComponent} from './components/authentication/register/register.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {AdminPanelComponent} from './components/admin-panel/admin-panel.component';
+import {MyProfileComponent} from './components/my-profile/my-profile.component';
+import { ModifyTripComponent } from './components/modify-trip/modify-trip.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     TripDetailsComponent,
     NavigationBarComponent,
     SignInComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminPanelComponent,
+    MyProfileComponent,
+    ModifyTripComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@ import {TripModel} from '../../../models/trip-model';
 import {GetMinMaxPricedTripsService} from '../../../services/get-min-max-priced-trips.service';
 import {Router} from '@angular/router';
 import {TripModifierService} from '../../../services/trip-modifier.service';
+import {RoleAccessService} from '../../../core/role-access.service';
+import {AuthenticationService} from '../../../core/auth.service';
 
 @Component({
   selector: 'app-single-trip',
@@ -16,6 +18,8 @@ export class SingleTripComponent implements OnInit {
   showDecreaseButton = false;
   showIncreaseButton = true;
   tripList: TripModel[];
+
+
   @Input() singleTrip;
 
   @Output() deleteSelected = new EventEmitter<number>();
@@ -25,9 +29,18 @@ export class SingleTripComponent implements OnInit {
     private tripsService: GetTripsListService,
     public maxMinService: GetMinMaxPricedTripsService,
     private router: Router,
-    private tripModifier: TripModifierService
+    private tripModifier: TripModifierService,
+    public roleAccess: RoleAccessService,
+    private authService: AuthenticationService
   ) {
+
   }
+
+
+  get authorize() {
+    return this.authService.authenticated;
+  }
+
 
   ngOnInit(): void {
     this.currentRate = this.singleTrip.rating;
@@ -37,23 +50,31 @@ export class SingleTripComponent implements OnInit {
     this.tripModifier.init();
     this.showDecreaseButton = this.singleTrip.selected_places > 0;
     this.showIncreaseButton = this.singleTrip.selected_places < this.singleTrip.max_places;
-
   }
 
-
   decreaseTripsTakenCounter() {
+
+
     this.showDecreaseButton = this.tripModifier.decreaseTripTakenPlaces(this.singleTrip);
   }
 
   increaseTripsTakenCounter() {
+
+
     this.showIncreaseButton = this.tripModifier.increaseTripTakenPlaces(this.singleTrip);
   }
 
   deleteTripClicked() {
+
+
     this.tripModifier.deleteTrip(this.singleTrip);
   }
 
   goToTripDetails() {
+    if (!this.authorize) {
+      this.router.navigate(['signIn']);
+      return;
+    }
     this.router.navigate(['/trips', this.singleTrip.key]);
   }
 

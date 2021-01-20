@@ -21,9 +21,15 @@ export class AuthGuard implements CanActivate {
     Observable<boolean> | Promise<boolean> | boolean {
 
     if (this.authService.authenticated !== true) {
-      this.router.navigate(['logIn']);
+      this.router.navigate(['signIn']);
     }
     if (next.routeConfig.path == 'add' && !this.roleAccess.userAccessModel.add_trip) {
+      return false;
+    }
+    if (next.routeConfig.path == 'admin' && this.roleAccess.userAccessRole != 'admin') {
+      return false;
+    }
+    if (next.routeConfig.path == 'trips/modify' && !this.roleAccess.userAccessModel['modify_trip']) {
       return false;
     }
     return true;

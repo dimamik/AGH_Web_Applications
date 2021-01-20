@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../core/auth.service';
+import {RoleAccessService} from '../../core/role-access.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -9,7 +10,8 @@ import {AuthenticationService} from '../../core/auth.service';
 export class NavigationBarComponent implements OnInit {
 
   constructor(
-    public auth: AuthenticationService
+    public auth: AuthenticationService,
+    public roleAccess: RoleAccessService
   ) {
   }
 

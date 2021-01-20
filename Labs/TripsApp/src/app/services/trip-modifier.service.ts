@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {GetTripsListService} from './get-trips-list.service';
 import {TripModel} from '../models/trip-model';
 import {GetMinMaxPricedTripsService} from './get-min-max-priced-trips.service';
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../core/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,9 @@ export class TripModifierService {
 
   constructor(
     public tripsService: GetTripsListService,
-    public minMaxService: GetMinMaxPricedTripsService
+    public minMaxService: GetMinMaxPricedTripsService,
+    public router: Router,
+    public authService: AuthenticationService
   ) {
   }
 
@@ -23,6 +27,10 @@ export class TripModifierService {
 
   }
 
+  get authorize() {
+    return this.authService.authenticated;
+  }
+
   /**
    * Increases TripTakenPlaces if possible
    * Returns true if increase was made (if selected places are
@@ -30,6 +38,10 @@ export class TripModifierService {
    * @param trip
    */
   increaseTripTakenPlaces(trip: TripModel): boolean {
+    if (!this.authorize) {
+      this.router.navigate(['signIn']);
+      return;
+    }
     if (trip.selected_places < trip.max_places) {
       trip.selected_places += 1;
       this.tripsService.updateTrip(trip.key, trip);
@@ -43,6 +55,10 @@ export class TripModifierService {
    * @param trip
    */
   decreaseTripTakenPlaces(trip: TripModel) {
+    if (!this.authorize) {
+      this.router.navigate(['signIn']);
+      return;
+    }
     if (trip.selected_places <= trip.max_places) {
       trip.selected_places -= 1;
       this.tripsService.updateTrip(trip.key, trip);
@@ -51,6 +67,10 @@ export class TripModifierService {
   }
 
   deleteTrip(trip: TripModel) {
+    if (!this.authorize) {
+      this.router.navigate(['signIn']);
+      return;
+    }
     this.minMaxService.removePrice(trip.key);
     this.tripsService.deleteTrip(trip.key);
   }

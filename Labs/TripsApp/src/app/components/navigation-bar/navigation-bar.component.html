@@ -5,17 +5,28 @@
           data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="trips">Trips <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="trips">Trips<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="!auth.authenticated" class="nav-item">
+        <a class="nav-link" routerLink="register">Register</a>
+      </li>
+      <li *ngIf="!auth.authenticated" class="nav-item">
+        <a class="nav-link" routerLink="signIn">Log In</a>
+      </li>
+      <li *ngIf="auth.authenticated" class="nav-item">
         <a class="nav-link" routerLink="selected">Selected Trips</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="roleAccess.userAccessModel['add_trip']" class="nav-item">
         <a class="nav-link" routerLink="add">Add Trip</a>
+      </li>
+      <li *ngIf="auth.authenticated" class="nav-item d-inline-block">
+        <a class="nav-link" routerLink="profile">My profile</a>
+      </li>
+      <li *ngIf="roleAccess.userAccessRole == 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="admin">Admin Panel</a>
       </li>
       <li *ngIf="auth.authenticated" class="nav-item">
         <a (click)="auth.logOut()" class="nav-link" routerLink="signIn">Log Out</a>

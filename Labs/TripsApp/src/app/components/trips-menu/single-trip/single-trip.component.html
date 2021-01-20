@@ -1,5 +1,6 @@
 <!--Single card style-->
-<div
+<div *ngIf="((singleTrip.max_places - singleTrip.selected_places>0) || roleAccess.userAccessModel['read_unavailable'])"
+
   [ngStyle]="{
   'background-color': (singleTrip.max_places - singleTrip.selected_places < 3) ? 'darkgoldenrod' : 'antiquewhite',
    'color': (singleTrip.max_places - singleTrip.selected_places < 3) ? 'white' : 'black'
@@ -48,7 +49,6 @@
         style="width: 40%; position: relative; bottom: 0; border-radius: 5%;">{{singleTrip.price | currency:'USD':'$'}}</h4>
 
     <div class="card_buttons float-right " style="width: 60%">
-
       <div (click)="decreaseTripsTakenCounter()" *ngIf="showDecreaseButton"
            class="icon  d-inline-block m-1 float-right" style="width: 20%">
         <img alt="" src="../../../../assets/minus_icon.png" style="cursor: pointer" width="100%">
@@ -57,7 +57,7 @@
            class="icon  d-inline-block m-1 float-right" style="width: 20%">
         <img alt="" src="../../../../assets/add_icon.png" style="cursor: pointer" width="100%">
       </div>
-      <div (click)="deleteTripClicked()"
+      <div (click)="deleteTripClicked()" *ngIf="roleAccess.userAccessModel['delete_trip']"
            class="icon d-inline-block m-1 float-right" style="width: 20%">
         <img alt="" src="../../../../assets/trash_icon.webp" style="cursor: pointer" width="100%">
       </div>

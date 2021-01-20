@@ -1,0 +1,15 @@
+<h1 class="text-center">Welcome in Admin Panel!</h1>
+<mat-card>
+  <mat-label class="text-center"><h1>Persistence</h1></mat-label>
+  <h4>Current Persistence is: {{authService.persistence}}</h4>
+  <h5>Change it:</h5>
+  <mat-form-field appearance="fill">
+    <mat-label>Session type</mat-label>
+    <mat-select [(value)]="authService.persistence" (valueChange)="authService.setPersistence()">
+      <mat-option *ngFor="let val of values" [value]="val">
+        {{val}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card>
+

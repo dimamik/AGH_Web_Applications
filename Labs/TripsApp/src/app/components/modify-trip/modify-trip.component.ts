@@ -1,17 +1,18 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import {TripModel} from '../../models/trip-model';
+import {ActivatedRoute, Router} from '@angular/router';
 import {GetTripsListService} from '../../services/get-trips-list.service';
 import {GetMinMaxPricedTripsService} from '../../services/get-min-max-priced-trips.service';
 import {TripModifierService} from '../../services/trip-modifier.service';
 import {RoleAccessService} from '../../core/role-access.service';
 
 @Component({
-  selector: 'app-trip-details',
-  templateUrl: './trip-details.component.html',
-  styleUrls: ['./trip-details.component.css']
+  selector: 'app-modify-trip',
+  templateUrl: './modify-trip.component.html',
+  styleUrls: ['./modify-trip.component.css']
 })
-export class TripDetailsComponent implements OnInit {
+export class ModifyTripComponent implements OnInit {
+
 
   currentRate: number;
   showDecreaseButton = false;
@@ -40,23 +41,4 @@ export class TripDetailsComponent implements OnInit {
 
     });
   }
-
-  setRating(param) {
-    this.singleTrip.rating = param;
-    this.tripService.updateTrip(this.singleTrip.key, this.singleTrip);
-  }
-
-  decreaseTripsTakenCounter() {
-    this.showDecreaseButton = this.tripModifier.decreaseTripTakenPlaces(this.singleTrip);
-  }
-
-  increaseTripsTakenCounter() {
-    this.showIncreaseButton = this.tripModifier.increaseTripTakenPlaces(this.singleTrip);
-  }
-
-  deleteTripClicked() {
-    this.tripModifier.deleteTrip(this.singleTrip);
-    this.router.navigate(['/trips']);
-  }
-
 }

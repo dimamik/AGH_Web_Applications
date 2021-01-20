@@ -8,17 +8,23 @@ import {TripDetailsComponent} from '../components/trip-details/trip-details.comp
 import {RegisterComponent} from '../components/authentication/register/register.component';
 import {SignInComponent} from '../components/authentication/sign-in/sign-in.component';
 import {AuthGuard} from '../core/guard/auth.guard';
+import {AdminPanelComponent} from '../components/admin-panel/admin-panel.component';
+import {MyProfileComponent} from '../components/my-profile/my-profile.component';
+import {ModifyTripComponent} from '../components/modify-trip/modify-trip.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'signIn', pathMatch: 'full'},
-  {path: 'trips', component: ListOfTripsComponent, canActivate: [AuthGuard]},
+
+  {path: '', redirectTo: 'trips', pathMatch: 'full'},
+  {path: 'trips', component: ListOfTripsComponent},
   {path: 'trips/:key', component: TripDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'trips/modify/:key', component: ModifyTripComponent, canActivate: [AuthGuard]},
   {path: 'selected', component: SelectedTripsListComponent, canActivate: [AuthGuard]},
+  {path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: MyProfileComponent, canActivate: [AuthGuard]},
   {path: 'add', component: AddTripComponent, canActivate: [AuthGuard]},
   {path: 'signIn', component: SignInComponent},
   {path: 'register', component: RegisterComponent},
   {path: '**', component: PageNotFoundComponent}
-
 ];
 
 @NgModule({
