@@ -1,33 +1,61 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width" *ngFor="let par in singleTrip">
-    <mat-label>Trip name</mat-label>
-    <input  matInput placeholder="{{par}}" [(ngModel)]="singleTrip[par]">
-  </mat-form-field>
-</form>
-
-
-
-<div style="background-color:antiquewhite">
-  <h1 class="text-center">{{singleTrip.name }}</h1>
-  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Destination
-    country: </p> {{singleTrip.country }}</h2>
-  <img alt="" class="rounded-circle" src="../../../assets/logo.gif" style=" display: block;
-    margin-left: auto;
-    margin-right: auto">
-  <!--  Date-->
-  <h2 class="text-center "><p style="text-decoration: underline; display: inline-block">Date of trip: </p> <br>
-    <p style="text-decoration: underline; display: inline-block">From:</p> {{singleTrip.data_start }} <br>
-    <p style="text-decoration: underline; display: inline-block">To:</p> {{singleTrip.data_end}}</h2>
-  <!--Description-->
-  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Description:</p></h2>
-  <h5 class="text-center ">{{singleTrip.description }}</h5>
-  <!--  Places-->
-  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">
-    Places:</p> {{singleTrip.max_places - singleTrip.selected_places }} / {{singleTrip.max_places}}</h2>
-  <div *ngIf="singleTrip.selected_places == singleTrip.max_places" class="no_more_places m-3 text-center">
-    <p style="color: red; font-size: xx-large"> No places left</p>
+<mat-card>
+  <mat-card-title class="text-center align-content-center justify-content-center">
+    <h1 class="mat-display-1">Edit Trip Details</h1>
+  </mat-card-title>
+  <div class="md-form md-outline form-lg">
+    <input [(ngModel)]="singleTrip.name" class="form-control form-control-lg" id="form-1" mdbInput type="text">
+    <label class="text-center align-content-center" for="form-1">Name</label>
   </div>
-  <!--  Price-->
-  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Price:</p> {{singleTrip.price}} $
-  </h2>
-</div>
+  <div class="md-form md-outline form-lg">
+    <input [(ngModel)]="singleTrip.country" class="form-control form-control-lg" id="form-2" mdbInput type="text">
+    <label class="text-center align-content-center" for="form-2">Country</label>
+  </div>
+  <div class="submit">
+    <input [(ngModel)]="singleTrip.data_start" class="form-control form-control-lg" id="form-3" mdbInput type="date">
+    <label class="text-center align-content-center" for="form-3">Data Start</label>
+  </div>
+  <div class="submit">
+    <input [(ngModel)]="singleTrip.data_end" class="form-control form-control-lg" id="form-4" mdbInput type="date">
+    <label class="text-center align-content-center" for="form-4">Data End</label>
+  </div>
+  <div class="submit">
+    <input [(ngModel)]="singleTrip.max_places" class="form-control form-control-lg" id="form-5" mdbInput type="number">
+    <label class="text-center align-content-center" for="form-5">Max Places</label>
+  </div>
+  <div class="submit">
+    <input [(ngModel)]="singleTrip.price" class="form-control form-control-lg" id="form-6" mdbInput type="number">
+    <label class="text-center align-content-center" for="form-6">Price</label>
+  </div>
+  <div class="submit">
+    <input [(ngModel)]="singleTrip.description" class="form-control form-control-lg" id="form-7" mdbInput type="text">
+    <label class="text-center align-content-center" for="form-7">Description</label>
+  </div>
+
+  <button (click)="updateTrip()" class="btn btn-primary" type="button">Update Trip</button>
+</mat-card>
+<!-- Material form contact -->
+
+<!--<div style="background-color:antiquewhite">-->
+<!--  <h1 class="text-center">{{singleTrip.name }}</h1>-->
+<!--  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Destination-->
+<!--    country: </p> {{singleTrip.country }}</h2>-->
+<!--  <img alt="" class="rounded-circle" src="../../../assets/logo.gif" style=" display: block;-->
+<!--    margin-left: auto;-->
+<!--    margin-right: auto">-->
+<!--  &lt;!&ndash;  Date&ndash;&gt;-->
+<!--  <h2 class="text-center "><p style="text-decoration: underline; display: inline-block">Date of trip: </p> <br>-->
+<!--    <p style="text-decoration: underline; display: inline-block">From:</p> {{singleTrip.data_start }} <br>-->
+<!--    <p style="text-decoration: underline; display: inline-block">To:</p> {{singleTrip.data_end}}</h2>-->
+<!--  &lt;!&ndash;Description&ndash;&gt;-->
+<!--  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Description:</p></h2>-->
+<!--  <h5 class="text-center ">{{singleTrip.description }}</h5>-->
+<!--  &lt;!&ndash;  Places&ndash;&gt;-->
+<!--  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">-->
+<!--    Places:</p> {{singleTrip.max_places - singleTrip.selected_places }} / {{singleTrip.max_places}}</h2>-->
+<!--  <div *ngIf="singleTrip.selected_places == singleTrip.max_places" class="no_more_places m-3 text-center">-->
+<!--    <p style="color: red; font-size: xx-large"> No places left</p>-->
+<!--  </div>-->
+<!--  &lt;!&ndash;  Price&ndash;&gt;-->
+<!--  <h2 class="text-center"><p style="text-decoration: underline; display: inline-block">Price:</p> {{singleTrip.price}} $-->
+<!--  </h2>-->
+<!--</div>-->

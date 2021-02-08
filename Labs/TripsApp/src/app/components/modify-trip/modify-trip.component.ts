@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TripModel} from '../../models/trip-model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {GetTripsListService} from '../../services/get-trips-list.service';
@@ -40,5 +40,9 @@ export class ModifyTripComponent implements OnInit {
       this.showIncreaseButton = this.singleTrip.selected_places < this.singleTrip.max_places;
 
     });
+  }
+
+  updateTrip() {
+    this.tripService.updateTrip(this.singleTrip.key, this.singleTrip);
   }
 }

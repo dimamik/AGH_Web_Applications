@@ -92,4 +92,7 @@ export class SingleTripComponent implements OnInit {
     return this.maxMinService.minKey == this.singleTrip.key;
   }
 
+  goToEdition() {
+    this.router.navigate(['/trips/modify', this.singleTrip.key]);
+  }
 }

@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'trips/modify/:key', component: ModifyTripComponent, canActivate: [AuthGuard]},
   {path: 'selected', component: SelectedTripsListComponent, canActivate: [AuthGuard]},
   {path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: MyProfileComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: MyProfileComponent},
   {path: 'add', component: AddTripComponent, canActivate: [AuthGuard]},
   {path: 'signIn', component: SignInComponent},
   {path: 'register', component: RegisterComponent},
@@ -28,7 +28,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

@@ -43,6 +43,13 @@ export class AuthenticationService {
     this.getPersistence();
   }
 
+  get authenticated(): boolean {
+    return this.userDetails != null;
+  }
+
+  get currentUserId(): string {
+    return this.authenticated ? this.userDetails.uid : '';
+  }
 
   getPersistence() {
     this.afs.collection('configuration').get().subscribe((querySnapshot) => {
@@ -61,10 +68,10 @@ export class AuthenticationService {
         }
       });
 
-    })
+    });
   }
 
-  setPersistence(){
+  setPersistence() {
     this.afs.collection('configuration').doc('session').set({
       type: this.persistence
     }).then(
@@ -72,18 +79,9 @@ export class AuthenticationService {
         console.log('setPersistence successfully added')
     )
       .catch(
-        (ex)=>
+        (ex) =>
           console.log('setPersistence successfully added')
       );
-  }
-
-
-  get authenticated(): boolean {
-    return this.userDetails != null;
-  }
-
-  get currentUserId(): string {
-    return this.authenticated ? this.userDetails.uid : '';
   }
 
   logOut() {
@@ -129,6 +127,32 @@ export class AuthenticationService {
     );
   }
 
+  signUp(email, password) {
+    this.afAuth.setPersistence(this.persistence).then(() => {
+      // Now sign-in using your chosen method.
+      this.SignUp(email, password);
+      return this.afAuth.signInAnonymously();
+    }).catch((error) => {
+      // Handle errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      console.error(errorCode, errorMessage);
+    });
+  }
+
+  signIn(email, password) {
+    this.afAuth.setPersistence(this.persistence).then(() => {
+      // Now sign-in using your chosen method.
+      this.SignIn(email, password);
+      return this.afAuth.signInAnonymously();
+    }).catch((error) => {
+      // Handle errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      console.error(errorCode, errorMessage);
+    });
+  }
+
   // Sign up with email/password
   private SignUp(email, password) {
     this.afAuth.createUserWithEmailAndPassword(email, password)
@@ -148,19 +172,6 @@ export class AuthenticationService {
     });
   }
 
-  signUp(email, password) {
-    this.afAuth.setPersistence(this.persistence).then(() => {
-      // Now sign-in using your chosen method.
-      this.SignUp(email, password);
-      return this.afAuth.signInAnonymously();
-    }).catch((error) => {
-      // Handle errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      console.error(errorCode, errorMessage);
-    });
-  }
-
   // Sign in with email/password
   private SignIn(email, password) {
     this.afAuth.signInWithEmailAndPassword(email, password)
@@ -174,19 +185,6 @@ export class AuthenticationService {
         );
       }).catch((error) => {
       window.alert(error.message);
-    });
-  }
-
-  signIn(email, password) {
-    this.afAuth.setPersistence(this.persistence).then(() => {
-      // Now sign-in using your chosen method.
-      this.SignIn(email, password);
-      return this.afAuth.signInAnonymously();
-    }).catch((error) => {
-      // Handle errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      console.error(errorCode, errorMessage);
     });
   }
 }

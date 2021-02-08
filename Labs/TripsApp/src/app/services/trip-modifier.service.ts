@@ -19,16 +19,16 @@ export class TripModifierService {
   ) {
   }
 
+  get authorize() {
+    return this.authService.authenticated;
+  }
+
   init() {
     this.tripsService.getTripsList().subscribe(items => {
       this.tripsList = items;
     })
     ;
 
-  }
-
-  get authorize() {
-    return this.authService.authenticated;
   }
 
   /**

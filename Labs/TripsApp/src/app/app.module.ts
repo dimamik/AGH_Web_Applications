@@ -27,7 +27,7 @@ import {RegisterComponent} from './components/authentication/register/register.c
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AdminPanelComponent} from './components/admin-panel/admin-panel.component';
 import {MyProfileComponent} from './components/my-profile/my-profile.component';
-import { ModifyTripComponent } from './components/modify-trip/modify-trip.component';
+import {ModifyTripComponent} from './components/modify-trip/modify-trip.component';
 
 @NgModule({
   declarations: [

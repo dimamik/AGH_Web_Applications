@@ -1,1 +1,15 @@
-<p>my-profile works!</p>
+<mat-panel-title style=" text-align: center;">
+  <h1 class="mat-display-1 fw-bold" style=" text-align: center;">My profile information</h1>
+</mat-panel-title>
+
+<mat-card>
+  <h3>
+    Role: <b>{{roleAccess.userAccessRole}}</b> <br>
+    add_trip: <b>{{roleAccess.userAccessModel['add_trip']}}</b> <br>
+    delete_trip: <b>{{roleAccess.userAccessModel['delete_trip']}}</b> <br>
+    modify_trip: <b>{{roleAccess.userAccessModel['modify_trip']}}</b> <br>
+    read_archived: <b>{{roleAccess.userAccessModel['read_archived']}}</b> <br>
+    read_available: <b>{{roleAccess.userAccessModel['read_available']}}</b> <br>
+    read_unavailable: <b>{{roleAccess.userAccessModel['read_unavailable']}}</b> <br>
+  </h3>
+</mat-card>

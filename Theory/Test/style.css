@@ -1,0 +1,4 @@
+div#test  {background-color: blue; }
+p.my_test  {background-color: pink; }
+p  {background-color: red; }
+div > p  {background-color: green; }

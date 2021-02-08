@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { FireManipulatorService } from './fire-manipulator.service';
+import {FireManipulatorService} from './fire-manipulator.service';
 
 describe('FireManilupatorService', () => {
   let service: FireManipulatorService;

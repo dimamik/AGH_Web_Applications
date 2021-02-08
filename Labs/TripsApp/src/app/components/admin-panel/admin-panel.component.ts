@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import firebase from 'firebase';
 import {AuthenticationService} from '../../core/auth.service';
 
 
@@ -11,17 +10,16 @@ import {AuthenticationService} from '../../core/auth.service';
 
 export class AdminPanelComponent implements OnInit {
 
+  persistence: string;
+  values = ['LOCAL', 'SESSION', 'NONE'];
+
   constructor(
     public authService: AuthenticationService
   ) {
     authService.getPersistence();
   }
 
-  persistence: string;
-
   ngOnInit(): void {
   }
-
-  values = ['LOCAL', 'SESSION', 'NONE'];
 
 }
